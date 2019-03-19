@@ -50,5 +50,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+	clickMe:function (e) {
+		this.setData({motto: '点我干嘛？'})
+	}
 })
