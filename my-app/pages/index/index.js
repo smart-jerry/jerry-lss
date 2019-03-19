@@ -52,6 +52,6 @@ Page({
     })
   },
 	clickMe:function (e) {
-		this.setData({motto: '点我干嘛？'})
+		this.setData({motto: '点我干嘛？知道我是谁吗？'})
 	}
 })
