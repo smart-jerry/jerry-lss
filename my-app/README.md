@@ -1,4 +1,4 @@
-# 一，api
+# 一，API
 微信小程序
 
 微信开发api：https://developers.weixin.qq.com/miniprogram/dev/index.html\
@@ -9,8 +9,8 @@ ps：微信不绑卡，可以用测试账号写demo\
 
 
 # 二，环境搭建
-环境：node 9.11.1\
-##2.1，安装开发工具：
+环境：node 11.12.0\
+###1，安装开发工具：
 全局安装taro开发工具：`npm install -g @tarojs/cli\`\
 感受:taro的工具很厉害，连自适应都做好了，哈...\
 taro就是用封装好的组件写代码，类似于elementui、bootstrap等
@@ -21,7 +21,10 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 
 
 # 三，相关问题
-
+###1,依赖安装失败
+报错:依赖包获取失败，网络超时\
+原因：https://r.cnpmjs.org请求超时，.npmrc文件设置的npm源有问题，似乎是内网域名\
+解决方案：修改成淘宝的源
 
 # 三，旅途
 1，环境搭建（√）\
