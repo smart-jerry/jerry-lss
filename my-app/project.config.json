@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "myApp",
   "description": "react和微信小程序",
-  "appid": "touristappid",
+  "appid": "wx8fb49ea8d5eca150",
   "setting": {
     "urlCheck": true,
     "es6": false,
