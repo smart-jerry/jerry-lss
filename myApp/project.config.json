@@ -1,7 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "myApp",
-	"description": "青玉斋",
+	"description": "青琅斋",
 	"appid": "wx8fb49ea8d5eca150",
 	"setting": {
 		"urlCheck": true,
