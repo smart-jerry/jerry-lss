@@ -12,8 +12,7 @@ ps：微信不绑卡，可以用测试账号写demo\
 # 二，环境搭建
 环境：node 11.12.0\
 ###1，安装开发工具：
-全局安装taro开发工具：`npm install -g @tarojs/cli\`
-
+全局安装taro开发工具：`npm install -g @tarojs/cli`
 感受:taro的工具很厉害，连自适应都做好了，哈...\
 taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 
