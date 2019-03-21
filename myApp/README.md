@@ -26,6 +26,7 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 原因：https://r.cnpmjs.org请求超时，.npmrc文件设置的npm源有问题，似乎是内网域名\
 解决方案：修改成淘宝的源
 
+###2,如何获取输入框input的值
 
 
 # 三，旅途

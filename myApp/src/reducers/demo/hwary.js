@@ -1,7 +1,7 @@
 /**
  * Created by jerry on 2019/3/21.
  */
-const hwary = [
+const myary = [
   {"name":'aaaa',id:1},
   {"name":'bbb',id:2},
   {"name":'ccc',id:3},
@@ -14,9 +14,11 @@ const hwary = [
   {"name":'jjj',id:10}
 ]
 
-export default function counter (state = hwary, action) {
+const hwary = (state = myary, action)=> {
   switch (action.type) {
     default:
       return state
   }
 }
+
+export default hwary;

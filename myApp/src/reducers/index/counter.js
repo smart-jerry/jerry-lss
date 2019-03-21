@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   num: 0
 }
 
-export default function counter (state = INITIAL_STATE, action) {
+const counter = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD:
       return {
@@ -20,3 +20,4 @@ export default function counter (state = INITIAL_STATE, action) {
        return state
   }
 }
+export default counter
