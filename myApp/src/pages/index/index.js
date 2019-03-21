@@ -36,6 +36,11 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  gotoDemo(){
+    Taro.navigateTo({
+      url: '/pages/demo/index'
+    })
+  }
   render () {
     return (
       <View className='index'>
@@ -44,6 +49,7 @@ class Index extends Component {
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
         <View><Text>{this.props.counter.num}</Text></View>
         <View><Text>Hello, World</Text></View>
+        <Button onClick={this.gotoDemo}>跳转到demo</Button>
       </View>
     )
   }

@@ -1,7 +1,7 @@
 # 一，API
 微信小程序
 
-微信开发api：https://developers.weixin.qq.com/miniprogram/dev/index.html\
+微信开发api：https://developers.weixin.qq.com/miniprogram/dev/index.html\n
 taro api：https://nervjs.github.io/taro/docs/GETTING-STARTED.html
 
 ps：微信不绑卡，可以用测试账号写demo\
