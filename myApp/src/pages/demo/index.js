@@ -4,17 +4,14 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View, Button, Text, Input } from '@tarojs/components'
+import {add} from '../../actions/demo/index'
 
 //数据传递
-@connect(({hwary,textInput}) => ({
-  hwary,
-  textInput
+@connect(({hwary}) => ({
+  hwary
 }), (dispatch) => ({
-  add(){
-    let input = this.input; // 访问小程序的原生组件
-    let val = input.value;
-    console.log(val,'=============myInput');
-    
+  add(text){
+    dispatch(add(text))
   }
 }))
 
@@ -29,28 +26,37 @@ class Demo extends Component{
     navigationBarTitleText: 'demo'
   }
   componentDidMount () {
-    // 如果 ref 的是小程序原生组件，那只有在 didMount 生命周期之后才能通过
-    // this.refs.input 访问到小程序原生组件
-    if (process.env.TARO_ENV === 'weapp') {
-      console.log(this.refs.input.value,'===================this.refs.input');
-      // 这里 this.refs.input 访问的时候通过 `wx.createSeletorQuery` 取到的小程序原生组件
-    } else if (process.env.TARO_ENV === 'h5') {
-      // 这里 this.refs.input 访问到的是 `@tarojs/components` 的 `Input` 组件实例
-    }
   }
-  refInput = (node) => this.input = node // `this.cat` 会变成 `Cat` 组件实例的引用
+  refInput = (node) => this.input = node // `this.input` 会变成 `Input` 组件实例的引用
   
-  test(){
+ /* test(){
     let input = this.input; // 访问小程序的原生组件
     let val = input.value;
     console.log(val,'=============myInput');
-  }
+  }*/
+ getVal(){
+   console.log(this.input,'=============this.input111');
+  
+   // 自定义组件获取实例
+   // const jquery = Taro.createSelectorQuery().in(this.$scope);
+   // 内置组件获取实例
+   const jquery = Taro.createSelectorQuery();
+   jquery.select('#myInput').boundingClientRect((react)=>{
+     console.log(react,'===========reactreactreact', react.bottom, react.dataset);
+     // 发送action
+     this.props.add('ssssss');
+   }).exec((back)=>{
+     console.log(back.valueOf(),'==========back');
+   })
+ }
+  
   render(){
     return(
       <View>
-        <Input ref='input' value={this.props.textInput} type="text" />
-        <Button onClick={this.props.add}>添加</Button>
-        <View>{this.props.myInput}</View>
+        <Input ref={this.refInput} id="myInput" type='text' placeholder='将会获取焦点' placeholderStyle='color:red' focus />
+        <Button onClick={this.getVal}>
+          Add Name
+        </Button>
         {
           this.props.hwary.map((item)=>
           <View>{item.name}</View>
@@ -60,5 +66,8 @@ class Demo extends Component{
     )
   }
 }
+
+
+
 
 export default Demo;

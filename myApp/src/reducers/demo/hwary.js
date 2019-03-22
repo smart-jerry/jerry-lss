@@ -16,6 +16,14 @@ const myary = [
 
 const hwary = (state = myary, action)=> {
   switch (action.type) {
+    case 'add':
+      return [
+        ...state,
+        {
+          id: action.id,
+          name: action.name
+        }
+      ]
     default:
       return state
   }
