@@ -9,3 +9,10 @@ export const add = (text) => {
     id:indexI++
   }
 }
+
+export const del =(id) => {
+  return {
+    type:'del',
+    id:id
+  }
+}

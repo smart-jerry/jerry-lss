@@ -4,7 +4,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View, Button, Text, Input } from '@tarojs/components'
-import {add} from '../../actions/demo/index'
+import {add, del} from '../../actions/demo/index'
 
 //数据传递
 @connect(({hwary}) => ({
@@ -12,6 +12,9 @@ import {add} from '../../actions/demo/index'
 }), (dispatch) => ({
   add(text){
     dispatch(add(text))
+  },
+  del(id){
+    dispatch(del(id))
   }
 }))
 
@@ -34,6 +37,7 @@ class Demo extends Component{
     let val = input.value;
     console.log(val,'=============myInput');
   }*/
+ // 添加数组
  getVal(){
    console.log(this.input,'=============this.input111');
   
@@ -49,7 +53,14 @@ class Demo extends Component{
      console.log(back.valueOf(),'==========back');
    })
  }
-  
+  // 删除数组
+  deleteHwary(id){
+    /*let bb = window.confirm("确定删除"+id)
+    if(bb){
+      this.props.del(id)
+    }*/
+    this.props.del(id)
+  }
   render(){
     return(
       <View>
@@ -59,7 +70,10 @@ class Demo extends Component{
         </Button>
         {
           this.props.hwary.map((item)=>
-          <View>{item.name}</View>
+          <View>
+            <Text>{item.name}</Text>
+            <Button className="btn-del" onClick={this.deleteHwary.bind(this,item.id)}>删除</Button>
+          </View>
           )
         }
       </View>
