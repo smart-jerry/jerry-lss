@@ -1,7 +1,7 @@
 /**
  * Created by jerry on 2019/3/22.
  */
-let indexI = 20;
+let indexI = 0;
 export const add = (text) => {
   return {
     type: 'add',
@@ -10,9 +10,10 @@ export const add = (text) => {
   }
 }
 
-export const del =(id) => {
+export const del =(id,name) => {
   return {
     type:'del',
-    id:id
+    id:id,
+    name:name
   }
 }

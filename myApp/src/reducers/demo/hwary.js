@@ -13,8 +13,12 @@ const hwary = (state = [], action)=> {
         }
       ]
     case 'del':
-      const idex = state.findIndex(v => v.id === action.id);
-      return state.splice(idex, 1);
+      console.log(state);
+      const idex = state.findIndex(item => item.id === action.id);
+      //splice 返回被删除的项目
+      state.splice(idex, 1);
+      return [...state]
+    
     default:
       return state
   }

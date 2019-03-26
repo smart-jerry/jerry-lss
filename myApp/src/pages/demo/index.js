@@ -6,6 +6,7 @@ import { connect } from '@tarojs/redux'
 import { View, Button, Text, Input } from '@tarojs/components'
 import {add, del} from '../../actions/demo/index'
 
+import logo from '../../statics/images/logo.svg'
 //数据传递
 @connect(({hwary}) => ({
   hwary
@@ -13,8 +14,8 @@ import {add, del} from '../../actions/demo/index'
   add(text){
     dispatch(add(text))
   },
-  del(id){
-    dispatch(del(id))
+  del(id,name){
+    dispatch(del(id,name))
   }
 }))
 
@@ -22,7 +23,6 @@ import {add, del} from '../../actions/demo/index'
 class Demo extends Component{
   constructor (props){
     super(props)
-    console.log(this.props,'============his.props');
   }
   
   config={
@@ -39,8 +39,6 @@ class Demo extends Component{
   }*/
  // 添加数组
  getVal(){
-   console.log(this.input,'=============this.input111');
-  
    // 自定义组件获取实例
    // const jquery = Taro.createSelectorQuery().in(this.$scope);
    // 内置组件获取实例
@@ -49,17 +47,15 @@ class Demo extends Component{
      console.log(react,'===========reactreactreact', react.bottom, react.dataset);
      // 发送action
      this.props.add('ssssss');
-   }).exec((back)=>{
-     console.log(back.valueOf(),'==========back');
-   })
+   }).exec()
  }
   // 删除数组
-  deleteHwary(id){
+  deleteHwary(id,name){
     /*let bb = window.confirm("确定删除"+id)
     if(bb){
       this.props.del(id)
     }*/
-    this.props.del(id)
+    this.props.del(id,name)
   }
   render(){
     return(
@@ -72,10 +68,13 @@ class Demo extends Component{
           this.props.hwary.map((item)=>
           <View>
             <Text>{item.name}</Text>
-            <Button className="btn-del" onClick={this.deleteHwary.bind(this,item.id)}>删除</Button>
+            <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id, item.name)}>删除</Button>
           </View>
           )
         }
+        <Image src={logo} style="display:block;width:330px;height:240px" />
+  
+        <image src={logo} style="display:block;width:330px;height:240px" />
       </View>
     )
   }
