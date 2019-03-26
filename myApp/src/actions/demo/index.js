@@ -1,6 +1,8 @@
 /**
  * Created by jerry on 2019/3/22.
  */
+import Taro from '@tarojs/taro'
+
 let indexI = 0;
 export const add = (text) => {
   return {
@@ -41,7 +43,27 @@ export function getImg () {
     dispatch(requestsending({text:'请求发送中...'}));
     setTimeout(()=>{
       dispatch(requestsuccessful({text:'请求发送成功！'}))
-    },5000)/*fetch(`/statics/images/logo.svg`).then((res)=>{
+    },5000)
+    
+    Taro.request({
+      url: 'http://127.0.0.1:31503/statics/data/demo.json',
+      data: {},
+      method: "POST",
+      success: (data) => {console.log(data)},
+      fail: (data) => {console.log(data)}
+    })
+  
+  
+   /* fetch(`/statics/data/demo.json`)
+    .then(response => response.json())
+    .then(json =>
+      {
+        console.log(json);
+        
+      }
+    );*/
+    
+    /*fetch(`/statics/images/logo.svg`).then((res)=>{
      console.log('数据请求成功！', res);
      dispatch(requestsuccessful({text:'请求发送成功！'}))
      });*/

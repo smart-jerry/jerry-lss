@@ -31,7 +31,8 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 
 ###3,删除数组，ui更新很慢，有时候不更新，而store却更新了。偶数点击可删除，奇数点击无效
 
-
+###4, fetch方面报错:is not function
+原因：小程序不支持，用taro.request
 
 # 四，旅途
 1，环境搭建（√）\

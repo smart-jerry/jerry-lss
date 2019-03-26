@@ -87,10 +87,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@tarojs/async-await@1.2.20":
-  version "1.2.20"
-  resolved "http://registry.npm.taobao.org/@tarojs/async-await/download/@tarojs/async-await-1.2.20.tgz#41f584ce9fbbabbce5ac50766141c72379a9d003"
-  integrity sha1-QfWEzp+7q7zlrFB2YUHHI3mp0AM=
+"@tarojs/async-await@^1.2.21":
+  version "1.2.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/async-await/download/@tarojs/async-await-1.2.21.tgz#30aea98e61a4fb2c7751a588dd742add1a0d78f2"
+  integrity sha1-MK6pjmGk+yx3UaWI3XQq3RoNePI=
   dependencies:
     promise-polyfill "^7.1.2"
     regenerator-runtime "^0.11.1"
