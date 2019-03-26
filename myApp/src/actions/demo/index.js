@@ -9,7 +9,7 @@ export const add = (text) => {
     type: 'add',
     name:text,
     id:indexI++,
-    completed:true
+    completed:false
   }
 }
 
