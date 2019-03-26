@@ -3,19 +3,24 @@
  */
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
-import { View, Button, Text, Input } from '@tarojs/components'
-import {add, del} from '../../actions/demo/index'
+import { View, Button, Text, Input,Image } from '@tarojs/components'
+import {add, del, getImg} from '../../actions/demo/index'
+import './index.less'
 
 import logo from '../../statics/images/logo.svg'
 //数据传递
-@connect(({hwary}) => ({
-  hwary
+@connect(({hwary,getImg}) => ({
+  hwary,
+  getImg
 }), (dispatch) => ({
   add(text){
     dispatch(add(text))
   },
   del(id,name){
     dispatch(del(id,name))
+  },
+  getImg(){
+    dispatch(getImg())
   }
 }))
 
@@ -72,9 +77,15 @@ class Demo extends Component{
           </View>
           )
         }
+        
+        <View>
+          <Button onClick={this.props.getImg}>异步获取图片</Button>
+          {this.props.getImg.text}
+          <View>
+            <Image src={this.props.getImg.text} style="display:block;width:330px;height:240px" />
+          </View>
+        </View>
         <Image src={logo} style="display:block;width:330px;height:240px" />
-  
-        <image src={logo} style="display:block;width:330px;height:240px" />
       </View>
     )
   }
