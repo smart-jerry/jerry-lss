@@ -8,7 +8,8 @@ export const add = (text) => {
   return {
     type: 'add',
     name:text,
-    id:indexI++
+    id:indexI++,
+    completed:true
   }
 }
 
@@ -17,6 +18,13 @@ export const del =(id,name) => {
     type:'del',
     id:id,
     name:name
+  }
+}
+
+export const toggle=(id)=>{
+  return {
+    type:'toggle',
+    id:id
   }
 }
 

@@ -4,7 +4,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View, Button, Text, Input,Image } from '@tarojs/components'
-import {add, del, getImg} from '../../actions/demo/index'
+import {add, del,toggle, getImg} from '../../actions/demo/index'
 import './index.less'
 
 import logo from '../../statics/images/logo.svg'
@@ -22,6 +22,9 @@ import logo from '../../statics/images/logo.svg'
   },
   getImg(){
     dispatch(getImg())
+  },
+  toggleHwary(id){
+    dispatch(toggle(id))
   }
 }))
 
@@ -81,11 +84,13 @@ class Demo extends Component{
         <Button onClick={this.getVal}>
           Add Name
         </Button>
+        hwary.length==={this.props.hwary.length} <br/>
         {
           this.props.hwary.map((item)=>
           <View>
-            <Text>{item.name}</Text>
+            <View style={item.completed?'text-decoration: none':'text-decoration: line-through'}>{item.name}{item.completed}</View>
             <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id, item.name)}>删除</Button>
+            <Button className="btn-del" onClick={this.props.toggleHwary.bind(this, item.id)}>已完成</Button>
           </View>
           )
         }
