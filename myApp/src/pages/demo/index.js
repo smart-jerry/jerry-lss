@@ -88,7 +88,7 @@ class Demo extends Component{
         {
           this.props.hwary.map((item)=>
           <View>
-            <View style={!item.completed?'text-decoration: none':'text-decoration: line-through'}>{item.name}{item.completed}</View>
+            <View className="item-list" style={!item.completed?'text-decoration: none':'text-decoration: line-through'}>{item.name}{item.completed}</View>
             <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id, item.name)}>删除</Button>
             <Button className="btn-del" onClick={this.props.toggleHwary.bind(this, item.id)}>已完成</Button>
           </View>
