@@ -17,6 +17,7 @@ import logo from '../../statics/images/logo.svg'
     dispatch(add(text))
   },
   del(id,name){
+    console.log(id,'===========this is del id');
     dispatch(del(id,name))
   },
   getImg(){
@@ -28,6 +29,9 @@ import logo from '../../statics/images/logo.svg'
 class Demo extends Component{
   constructor (props){
     super(props)
+    this.state={
+      inputValue:''
+    }
   }
   
   config={
@@ -37,22 +41,30 @@ class Demo extends Component{
   }
   refInput = (node) => this.input = node // `this.input` 会变成 `Input` 组件实例的引用
   
- /* test(){
-    let input = this.input; // 访问小程序的原生组件
-    let val = input.value;
-    console.log(val,'=============myInput');
-  }*/
+  keyInput(e){
+    console.log(e.detail.value, '======keyinput');
+//    this.inputval = e.detail.value;
+    this.setState({
+      inputValue: e.detail.value
+    })
+  }
  // 添加数组
  getVal(){
    // 自定义组件获取实例
    // const jquery = Taro.createSelectorQuery().in(this.$scope);
    // 内置组件获取实例
-   const jquery = Taro.createSelectorQuery();
+   /*const jquery = Taro.createSelectorQuery();
+   console.log(jquery.select('#myInput').value,'=============jquery.select(\'#myInput\')');
    jquery.select('#myInput').boundingClientRect((react)=>{
      console.log(react,'===========reactreactreact', react.bottom, react.dataset);
      // 发送action
      this.props.add('ssssss');
-   }).exec()
+   }).exec()*/
+   
+   this.props.add(this.state.inputValue);
+   this.setState({
+     inputValue: ''
+   })
  }
   // 删除数组
   deleteHwary(id,name){
@@ -65,7 +77,7 @@ class Demo extends Component{
   render(){
     return(
       <View>
-        <Input ref={this.refInput} id="myInput" type='text' placeholder='将会获取焦点' placeholderStyle='color:red' focus />
+        <Input type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onBlur={this.keyInput} />
         <Button onClick={this.getVal}>
           Add Name
         </Button>

@@ -22,16 +22,17 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 
 
 # 三，相关问题
-### 1,依赖安装失败
+### 1,依赖安装失败（√）
 报错:依赖包获取失败，网络超时\
 原因：`https://r.cnpmjs.org`请求超时，.npmrc文件设置的npm源有问题，似乎是内网域名\
 解决方案：修改成淘宝的源
 
-### 2,如何获取输入框input的值
+### 2,如何获取输入框input的值（√）
+在input上绑定onBlur事件，通过e.detail.value拿到用户输入的值
 
 ### 3,删除数组，ui更新很慢，有时候不更新，而store却更新了。偶数点击可删除，奇数点击无效
 
-### 4, fetch方面报错:is not function
+### 4, fetch方面报错:is not function（√）
 原因：小程序不支持，用taro.request
 
 # 四，旅途
