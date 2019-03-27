@@ -80,7 +80,8 @@ class Demo extends Component{
   render(){
     return(
       <View>
-        <Input type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onBlur={this.keyInput} />
+        {/*onBlur失去焦点事件在手机上必须点击done才能触发*/}
+        <Input type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onInput={this.keyInput} onConfirm={this.keyInput} />
         <Button onClick={this.getVal}>
           Add Name
         </Button>
