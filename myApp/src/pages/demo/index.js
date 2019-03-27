@@ -81,10 +81,8 @@ class Demo extends Component{
     return(
       <View>
         {/*onBlur失去焦点事件在手机上必须点击done才能触发*/}
-        <Input type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onInput={this.keyInput} onConfirm={this.keyInput} />
-        <Button onClick={this.getVal}>
-          Add Name
-        </Button>
+        <Input className="demo-text" type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onInput={this.keyInput} onConfirm={this.keyInput} />
+        <Button className="demo-btn" onClick={this.getVal}>Add</Button>
         hwary.length==={this.props.hwary.length} <br/>
         {
           this.props.hwary.map((item)=>
@@ -95,7 +93,7 @@ class Demo extends Component{
           </View>
           )
         }
-        
+        <br /><br />
         <View>
           <Button onClick={this.props.getImg}>异步获取图片</Button>
           {this.props.getImg.text}
