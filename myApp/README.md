@@ -30,7 +30,12 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 ### 2,如何获取输入框input的值（√）
 在input上绑定onBlur事件，通过e.detail.value拿到用户输入的值
 
-### 3,删除数组，ui更新很慢，有时候不更新，而store却更新了。偶数点击可删除，奇数点击无效
+### 3,删除数组，ui更新很慢，有时候不更新，而store却更新了。偶数点击可删除，奇数点击无效（√）
+原因： state.splice(index, 1) 是会修改原始数组的, 这样相当于直接对 state 中的数据直接修改.\
+官方解释：React Redux 会在 shouldComponentUpdate 中对新的 props 进行浅层的判等检查，以期提升性能。如果所有的引用都是相同的，则返回 false 从而跳过此次对组件的更新。\
+解释文档：http://cn.redux.js.org/docs/faq/ReactRedux.html\
+解决方案：想复制再splice，然后在返回，详见reducer/hwary.js中的del方法
+
 
 ### 4, fetch方面报错:is not function（√）
 原因：小程序不支持，用taro.request

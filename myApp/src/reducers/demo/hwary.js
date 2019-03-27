@@ -13,12 +13,11 @@ const hwary = (state = [], action)=> {
         }
       ]
     case 'del':
-      console.log(state);
-      const idex = state.findIndex(item => item.id === action.id);
+      const a2 = [...state];
+      const idex = a2.findIndex(item => item.id === action.id);
       //splice 返回被删除的项目
-      state.splice(idex, 1);
-      const mytest = state;
-      return {...state}
+      a2.splice(idex, 1);
+      return [...a2]
     case 'toggle':
       return state.map(todo =>
         (todo.id === action.id)

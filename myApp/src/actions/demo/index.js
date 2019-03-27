@@ -13,11 +13,10 @@ export const add = (text) => {
   }
 }
 
-export const del =(id,name) => {
+export const del =(id) => {
   return {
     type:'del',
-    id:id,
-    name:name
+    id:id
   }
 }
 

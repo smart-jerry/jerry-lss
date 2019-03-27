@@ -16,9 +16,9 @@ import logo from '../../statics/images/logo.svg'
   add(text){
     dispatch(add(text))
   },
-  del(id,name){
+  del(id){
     console.log(id,'===========this is del id');
-    dispatch(del(id,name))
+    dispatch(del(id))
   },
   getImg(){
     dispatch(getImg())
@@ -70,12 +70,12 @@ class Demo extends Component{
    })
  }
   // 删除数组
-  deleteHwary(id,name){
+  deleteHwary(id){
     /*let bb = window.confirm("确定删除"+id)
     if(bb){
       this.props.del(id)
     }*/
-    this.props.del(id,name)
+    this.props.del(id)
   }
   render(){
     return(
@@ -89,7 +89,7 @@ class Demo extends Component{
           this.props.hwary.map((item)=>
           <View>
             <View className="item-list" style={!item.completed?'text-decoration: none':'text-decoration: line-through'}>{item.name}{item.completed}</View>
-            <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id, item.name)}>删除</Button>
+            <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id)}>删除</Button>
             <Button className="btn-del" onClick={this.props.toggleHwary.bind(this, item.id)}>已完成</Button>
           </View>
           )
@@ -99,10 +99,9 @@ class Demo extends Component{
           <Button onClick={this.props.getImg}>异步获取图片</Button>
           {this.props.getImg.text}
           <View>
-            <Image src={this.props.getImg.text} style="display:block;width:330px;height:240px" />
+            <Image src={logo} style="display:block;width:330px;height:240px" />
           </View>
         </View>
-        <Image src={logo} style="display:block;width:330px;height:240px" />
       </View>
     )
   }
