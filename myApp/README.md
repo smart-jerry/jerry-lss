@@ -33,7 +33,8 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 ### 3,删除数组，ui更新很慢，有时候不更新，而store却更新了。偶数点击可删除，奇数点击无效（√）
 原因： state.splice(index, 1) 是会修改原始数组的, 这样相当于直接对 state 中的数据直接修改.\
 官方解释：React Redux 会在 shouldComponentUpdate 中对新的 props 进行浅层的判等检查，以期提升性能。如果所有的引用都是相同的，则返回 false 从而跳过此次对组件的更新。\
-解释文档：http://cn.redux.js.org/docs/faq/ReactRedux.html\
+解释文档：http://cn.redux.js.org/docs/faq/ReactRedux.html
+
 解决方案：想复制再splice，然后在返回，详见reducer/hwary.js中的del方法
 
 
@@ -56,7 +57,7 @@ taro\
 4，搭建库（√）
 
 
-5，小demo\
+5，小demo（√）\
 渲染，redux，异步action，组件，input输入内容
 
 
