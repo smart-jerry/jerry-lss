@@ -41,6 +41,9 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 ### 4, fetch方面报错:is not function（√）
 原因：小程序不支持，用taro.request
 
+### 5,底部bar点击切图tab无效？（√）
+原因：app.js中没有加对应的list。且底部导航无需自定义，直接在app.js中配置即可
+
 # 四，旅途
 1，环境搭建（√）\
 项目，开发者工具，目录文件熟悉

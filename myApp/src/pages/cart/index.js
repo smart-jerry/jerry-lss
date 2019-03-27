@@ -35,6 +35,7 @@ class Index extends Component {
   render () {
     return (
       <View className='category-box'>
+        购物车
       </View>
     )
   }

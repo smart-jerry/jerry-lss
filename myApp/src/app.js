@@ -31,6 +31,38 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    'tabBar' : {
+      'color'           : '#7A7E83',
+      'selectedColor'   : '#3cc51f',
+      'borderStyle'     : 'black',
+      'backgroundColor' : '#ffffff',
+      'list'            : [
+        {
+          'pagePath'         : 'pages/index/index',
+          'iconPath'         : 'statics/images/category.png',
+          'selectedIconPath' : 'statics/images/category.png',
+          'text'             : '首页'
+        },
+        {
+          'pagePath'         : 'pages/category/index',
+          'iconPath'         : 'statics/images/category.png',
+          'selectedIconPath' : 'statics/images/category.png',
+          'text'             : '类目'
+        },
+        {
+          'pagePath'         : 'pages/cart/index',
+          'iconPath'         : 'statics/images/category.png',
+          'selectedIconPath' : 'statics/images/category.png',
+          'text'             : '购物车'
+        },
+        {
+          'pagePath'         : 'pages/account/index',
+          'iconPath'         : 'statics/images/category.png',
+          'selectedIconPath' : 'statics/images/category.png',
+          'text'             : '个人中心'
+        },
+      ]
     }
   }
 
