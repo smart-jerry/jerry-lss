@@ -60,21 +60,21 @@ class Index extends Component {
           </View>
   
           <View className="tabbar">
-            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+            <Navigator url="/page/category/index" open-type="switchTab" hover-class="other-navigator-hover">
               <View className="icon"><Image src={icon} /></View>
               <Text>分类</Text>
             </Navigator>
           </View>
   
           <View className="tabbar">
-            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+            <Navigator url="/page/cart/index" open-type="switchTab" hover-class="other-navigator-hover">
               <View className="icon"><Image src={icon} /></View>
               <Text>购物车</Text>
             </Navigator>
           </View>
   
           <View className="tabbar">
-            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+            <Navigator url="/page/account/index" open-type="switchTab" hover-class="other-navigator-hover">
               <View className="icon"><Image src={icon} /></View>
               <Text>个人中心</Text>
             </Navigator>
