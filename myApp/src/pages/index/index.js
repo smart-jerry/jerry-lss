@@ -1,11 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Text, Navigator, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/index/counter'
 
 import './index.less'
-
+import icon from '../../statics/images/logo.svg'
 
 @connect(({ counter }) => ({
   counter
@@ -44,12 +44,42 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
-        <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
+        <View className="index-header">
+          头部
+        </View>
+        <View className="index-body">
+          <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
+          body
+        </View>
+        <View className="index-footer">
+          <View className="tabbar on">
+            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+              <View className="icon"><Image src={icon} /></View>
+              <Text>首页</Text>
+            </Navigator>
+          </View>
+  
+          <View className="tabbar">
+            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+              <View className="icon"><Image src={icon} /></View>
+              <Text>分类</Text>
+            </Navigator>
+          </View>
+  
+          <View className="tabbar">
+            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+              <View className="icon"><Image src={icon} /></View>
+              <Text>购物车</Text>
+            </Navigator>
+          </View>
+  
+          <View className="tabbar">
+            <Navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+              <View className="icon"><Image src={icon} /></View>
+              <Text>个人中心</Text>
+            </Navigator>
+          </View>
+        </View>
       </View>
     )
   }
