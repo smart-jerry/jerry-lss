@@ -27,10 +27,10 @@ class App extends Component {
       'pages/demo/index'
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: 'orange',
-      navigationBarTitleText: '青琅斋',
       navigationBarTextStyle: 'black',
+      navigationBarTitleText: '青琅斋',
+      navigationBarBackgroundColor: '#ffa500',
+      backgroundTextStyle:'dark',
       backgroundColorTop:'#ffa500',
       backgroundColor:'#ffa500'
     },
