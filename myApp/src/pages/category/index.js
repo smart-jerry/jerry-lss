@@ -45,13 +45,7 @@ class Index extends Component {
         </View>
         <View class="category-body">
           <View className="category-tab">
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
+            <View className="tab-item on">aaa</View>
             <View className="tab-item">aaa</View>
             <View className="tab-item">aaa</View>
             <View className="tab-item">aaa</View>
@@ -92,6 +86,55 @@ class Index extends Component {
                 </View>
               </View>
             </View>
+  
+            <View className="contain-item">
+              <Image className="item-img" src={goods1} />
+              <View className="item-info">
+                <View className="title">原矿高瓷蓝观音吊坠16.8克</View>
+                <View className="discount">促销</View>
+                <View className="operate-box">
+                  <View className="price">￥6888</View>
+                  <View className="add">+</View>
+                </View>
+              </View>
+            </View>
+  
+            <View className="contain-item">
+              <Image className="item-img" src={goods1} />
+              <View className="item-info">
+                <View className="title">原矿高瓷蓝观音吊坠16.8克</View>
+                <View className="discount">促销</View>
+                <View className="operate-box">
+                  <View className="price">￥6888</View>
+                  <View className="add">+</View>
+                </View>
+              </View>
+            </View>
+  
+            <View className="contain-item">
+              <Image className="item-img" src={goods1} />
+              <View className="item-info">
+                <View className="title">原矿高瓷蓝观音吊坠16.8克</View>
+                <View className="discount">促销</View>
+                <View className="operate-box">
+                  <View className="price">￥6888</View>
+                  <View className="add">+</View>
+                </View>
+              </View>
+            </View>
+  
+            <View className="contain-item">
+              <Image className="item-img" src={goods1} />
+              <View className="item-info">
+                <View className="title">原矿高瓷蓝观音吊坠16.8克</View>
+                <View className="discount">促销</View>
+                <View className="operate-box">
+                  <View className="price">￥6888</View>
+                  <View className="add">+</View>
+                </View>
+              </View>
+            </View>
+
           </View>
         </View>
       </View>
