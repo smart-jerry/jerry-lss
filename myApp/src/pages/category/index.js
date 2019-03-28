@@ -45,10 +45,14 @@ class Index extends Component {
         </View>
         <View class="category-body">
           <View className="category-tab">
-            <View className="tab-item on">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
-            <View className="tab-item">aaa</View>
+            <View className="tab-item">观音吊坠</View>
+            <View className="tab-item on">佛吊坠</View>
+            <View className="tab-item">观音戒指</View>
+            <View className="tab-item">佛戒</View>
+            <View className="tab-item">龙头戒</View>
+            <View className="tab-item">十二生肖</View>
+            <View className="tab-item">繁花似锦</View>
+            <View className="tab-item">其他</View>
           </View>
           <View className="category-contain">
             <View className="contain-item">
