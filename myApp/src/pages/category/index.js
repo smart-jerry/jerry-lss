@@ -5,8 +5,8 @@ import { connect } from '@tarojs/redux'
 import './index.less'
 
 import goods1 from '../../statics/goods/good1.jpg';
-@connect(({ counter }) => ({
-  counter
+@connect(({ categoryList }) => ({
+  categoryList
 }), (dispatch) => ({
   add () {
   
