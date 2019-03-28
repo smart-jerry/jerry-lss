@@ -41,25 +41,25 @@ class App extends Component {
         {
           'pagePath'         : 'pages/index/index',
           'iconPath'         : 'statics/images/home.png',
-          'selectedIconPath' : 'statics/images/home.on.png',
+          'selectedIconPath' : 'statics/images/home-on.png',
           'text'             : '首页'
         },
         {
           'pagePath'         : 'pages/category/index',
           'iconPath'         : 'statics/images/category.png',
-          'selectedIconPath' : 'statics/images/category.on.png',
+          'selectedIconPath' : 'statics/images/category-on.png',
           'text'             : '分类'
         },
         {
           'pagePath'         : 'pages/cart/index',
           'iconPath'         : 'statics/images/cart.png',
-          'selectedIconPath' : 'statics/images/cart.on.png',
+          'selectedIconPath' : 'statics/images/cart-on.png',
           'text'             : '购物车'
         },
         {
           'pagePath'         : 'pages/account/index',
           'iconPath'         : 'statics/images/account.png',
-          'selectedIconPath' : 'statics/images/account.on.png',
+          'selectedIconPath' : 'statics/images/account-on.png',
           'text'             : '会员中心'
         }
       ]
