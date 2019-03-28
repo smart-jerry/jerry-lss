@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text, Icon, Image, Input } from '@tarojs/components'
+import { View, Button, ScrollView, Icon, Image, Input } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import './index.less'
@@ -27,7 +27,10 @@ class Index extends Component {
     }
   }
   config = {
-    navigationBarTitleText: '分类'
+    navigationBarTitleText: '分类',
+    onReachBottomDistance:0,
+    enablePullDownRefresh:true,
+    backgroundTextStyle:'dark'
   }
   
   componentWillReceiveProps (nextProps) {
@@ -45,6 +48,11 @@ class Index extends Component {
       selectIndex:index
     })
   }
+  
+  nextpage(){
+    console.log('into next page。。。');
+  }
+  
   render () {
     return (
       <View className='category-box'>
@@ -61,7 +69,7 @@ class Index extends Component {
               <View className={`tab-item ${index===this.state.selectIndex?"on":""}`} onClick={this.checkItem.bind(this,index)}>{item.name}</View>
             )}
           </View>
-          <View className="category-contain">
+          <ScrollView scrollY="true" scrollWithAnimation="true" onScrollToLower={this.nextpage} className="category-contain">
             {
               this.props.categoryList[this.state.selectIndex].catList.map((item,index)=>
                 <View className="contain-item">
@@ -78,7 +86,7 @@ class Index extends Component {
               )
             }
 
-          </View>
+          </ScrollView>
         </View>
       </View>
     )
