@@ -4,7 +4,6 @@ import { connect } from '@tarojs/redux'
 
 import './index.less'
 
-import goods1 from '../../statics/goods/good1.jpg';
 @connect(({ categoryList }) => ({
   categoryList
 }), (dispatch) => ({
@@ -83,9 +82,7 @@ class Index extends Component {
                     </View>
                   </View>
                 </View>
-              )
-            }
-
+              )}
           </ScrollView>
         </View>
       </View>
