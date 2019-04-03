@@ -3,6 +3,7 @@ import { View, Button, Text, Navigator, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/index/counter'
+import liveChat from '../common/livechat/index'
 
 import './index.less'
 import icon from '../../statics/images/logo.svg'
@@ -81,6 +82,7 @@ class Index extends Component {
             </View>
           </View>
         </View>
+        <liveChat />
       </View>
     )
   }
