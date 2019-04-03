@@ -41,11 +41,24 @@ class Index extends Component {
       url: url
     })
   }
+  goToSearch(){
+    Taro.navigateTo({
+      url: '/pages/search/index'
+    })
+  }
   render () {
     return (
       <View className='index'>
-        <View className="index-header">
-          头部
+        <View class="header">
+          <View className="customize-box">
+            <navigator url="/pages/customize/index" hover-class="navigator-hover">
+              我要定制
+            </navigator>
+          </View>
+          <View className="search-box">
+            <Icon size='20' type='search' />
+            <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
+          </View>
         </View>
         <View className="index-body">
           <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>

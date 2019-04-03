@@ -48,16 +48,16 @@ class Index extends Component {
   nextpage(){
     console.log('into next page。。。');
   }
-  /*gotoCustomize(){
+  goToSearch(){
     Taro.navigateTo({
-      url: '/pages/customize/index'
+      url: '/pages/search/index'
     })
-  }*/
+  }
   
   render () {
     return (
       <View className='category-box'>
-        <View class="category-header">
+        <View class="header">
           <View className="customize-box">
             <navigator url="/pages/customize/index" hover-class="navigator-hover">
               我要定制
@@ -65,7 +65,7 @@ class Index extends Component {
           </View>
           <View className="search-box">
             <Icon size='20' type='search' />
-            <Input className="search" placeholder="请输入商品名称" placeholderStyle='color:#999999' type="text" />
+            <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
           </View>
         </View>
         <View class="category-body">
