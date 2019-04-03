@@ -26,10 +26,7 @@ class Index extends Component {
     }
   }
   config = {
-    navigationBarTitleText: '分类',
-    onReachBottomDistance:0,
-    enablePullDownRefresh:true,
-    backgroundTextStyle:'dark'
+    navigationBarTitleText: '分类'
   }
   
   componentWillReceiveProps (nextProps) {
@@ -51,12 +48,21 @@ class Index extends Component {
   nextpage(){
     console.log('into next page。。。');
   }
+  /*gotoCustomize(){
+    Taro.navigateTo({
+      url: '/pages/customize/index'
+    })
+  }*/
   
   render () {
     return (
       <View className='category-box'>
         <View class="category-header">
-          <View className="location-box">我的位置</View>
+          <View className="customize-box">
+            <navigator url="/pages/customize/index" hover-class="navigator-hover">
+              我要定制
+            </navigator>
+          </View>
           <View className="search-box">
             <Icon size='20' type='search' />
             <Input className="search" placeholder="请输入商品名称" placeholderStyle='color:#999999' type="text" />
