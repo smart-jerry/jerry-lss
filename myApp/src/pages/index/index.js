@@ -62,7 +62,24 @@ class Index extends Component {
         </View>
         <View className="index-body">
           <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
-          body
+          <View>
+            <View>限时秒杀</View>
+            <View>
+              瀑布流商品
+            </View>
+          </View>
+          <View>
+            <View>新品特惠</View>
+            <View>
+              瀑布流商品
+            </View>
+          </View>
+          <View>
+            <View>最好的商品推荐个最好的你</View>
+            <View>
+              瀑布流商品
+            </View>
+          </View>
         </View>
       </View>
     )
