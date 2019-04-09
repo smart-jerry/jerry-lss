@@ -45,6 +45,31 @@ class Index extends Component {
       {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
+  
+    this.newList = [
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+    ];
+  
+    this.recommendList = [
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+    ];
+    
   }
 
   componentWillUnmount () { }
@@ -83,6 +108,48 @@ class Index extends Component {
             <View className="flash-sale-box">
               {
                 this.flashList.map((item)=>
+                  <View className="item-box">
+                    <View className="img-box">
+                      <Image className="img-auto-width" src={item.imgUrl} />
+                    </View>
+                    <View className="info">{item.info}</View>
+                    <View className="price-box">
+                      <View className="price">{item.price}</View>
+                      <View className="price old-price">{item.oldPrice}</View>
+                    </View>
+                  </View>
+                )
+              }
+            </View>
+          </View>
+  
+  
+          <View>
+            <View className="title">新品特惠</View>
+            <View className="flash-sale-box">
+              {
+                this.newList.map((item)=>
+                  <View className="item-box">
+                    <View className="img-box">
+                      <Image className="img-auto-width" src={item.imgUrl} />
+                    </View>
+                    <View className="info">{item.info}</View>
+                    <View className="price-box">
+                      <View className="price">{item.price}</View>
+                      <View className="price old-price">{item.oldPrice}</View>
+                    </View>
+                  </View>
+                )
+              }
+            </View>
+          </View>
+  
+  
+          <View>
+            <View className="title">为你推荐</View>
+            <View className="flash-sale-box">
+              {
+                this.recommendList.map((item)=>
                   <View className="item-box">
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
