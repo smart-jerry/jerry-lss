@@ -35,39 +35,39 @@ class Index extends Component {
   
   componentWillMount(){
     this.flashList = [
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
   
     this.newList = [
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
   
     this.recommendList = [
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
     
   }
@@ -86,6 +86,11 @@ class Index extends Component {
   goToSearch(){
     Taro.navigateTo({
       url: '/pages/search/index'
+    })
+  }
+  gotoDedail(id){
+    Taro.navigateTo({
+      url: '/pages/detail/index?id'+id
     })
   }
   render () {
@@ -108,7 +113,7 @@ class Index extends Component {
             <View className="flash-sale-box">
               {
                 this.flashList.map((item)=>
-                  <View className="item-box">
+                  <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>

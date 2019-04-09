@@ -9,8 +9,8 @@ import './index.less'
 
 import logo from '../../statics/images/logo.svg'
 //数据传递
-@connect(({hwary,getImg}) => ({
-  hwary,
+@connect(({hwAry,getImg}) => ({
+  hwAry,
   getImg
 }), (dispatch) => ({
   add(text){
@@ -83,9 +83,9 @@ class Demo extends Component{
         {/*onBlur失去焦点事件在手机上必须点击done才能触发*/}
         <Input className="demo-text" type='text' placeholder='请输入...' value={this.state.inputValue} placeholderStyle='color:#999999' focus onInput={this.keyInput} onConfirm={this.keyInput} />
         <Button className="demo-btn" onClick={this.getVal}>Add</Button>
-        hwary.length==={this.props.hwary.length} <br/>
+        hwAry.length==={this.props.hwAry.length} <br/>
         {
-          this.props.hwary.map((item)=>
+          this.props.hwAry.map((item)=>
           <View>
             <View className="item-list" style={!item.completed?'text-decoration: none':'text-decoration: line-through'}>{item.name}{item.completed}</View>
             <Button className="btn-del" onClick={this.deleteHwary.bind(this, item.id)}>删除</Button>
