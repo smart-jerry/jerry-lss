@@ -134,7 +134,7 @@ class Index extends Component {
             <View className="flash-sale-box">
               {
                 this.newList.map((item)=>
-                  <View className="item-box">
+                  <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>
@@ -155,7 +155,7 @@ class Index extends Component {
             <View className="flash-sale-box">
               {
                 this.recommendList.map((item)=>
-                  <View className="item-box">
+                  <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>
