@@ -35,39 +35,39 @@ class Index extends Component {
   
   componentWillMount(){
     this.flashList = [
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
   
     this.newList = [
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
   
     this.recommendList = [
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
-      {'id':'15856','imgUrl':good2,'info':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'info':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥5.6','inventory':6},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
     
   }
@@ -109,7 +109,7 @@ class Index extends Component {
         </View>
         <View className="index-body">
           <View>
-            <View className="title">限时秒杀</View>
+            <View className="module-title">限时秒杀</View>
             <View className="flash-sale-box">
               {
                 this.flashList.map((item)=>
@@ -117,7 +117,7 @@ class Index extends Component {
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>
-                    <View className="info">{item.info}</View>
+                    <View className="title">{item.title}</View>
                     <View className="price-box">
                       <View className="price">{item.price}</View>
                       <View className="price old-price">{item.oldPrice}</View>
@@ -130,7 +130,7 @@ class Index extends Component {
   
   
           <View>
-            <View className="title">新品特惠</View>
+            <View className="module-title">新品特惠</View>
             <View className="flash-sale-box">
               {
                 this.newList.map((item)=>
@@ -138,7 +138,7 @@ class Index extends Component {
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>
-                    <View className="info">{item.info}</View>
+                    <View className="title">{item.title}</View>
                     <View className="price-box">
                       <View className="price">{item.price}</View>
                       <View className="price old-price">{item.oldPrice}</View>
@@ -151,7 +151,7 @@ class Index extends Component {
   
   
           <View>
-            <View className="title">为你推荐</View>
+            <View className="module-title">为你推荐</View>
             <View className="flash-sale-box">
               {
                 this.recommendList.map((item)=>
@@ -159,7 +159,7 @@ class Index extends Component {
                     <View className="img-box">
                       <Image className="img-auto-width" src={item.imgUrl} />
                     </View>
-                    <View className="info">{item.info}</View>
+                    <View className="title">{item.title}</View>
                     <View className="price-box">
                       <View className="price">{item.price}</View>
                       <View className="price old-price">{item.oldPrice}</View>
