@@ -78,7 +78,7 @@ class Index extends Component {
             {
               this.props.categoryList[this.state.selectIndex].catList.map((item,index)=>
                 <View className="contain-item">
-                  <Image className="item-img" src={item.img} />
+                  <Image className="item-img img-auto-width" src={item.img} />
                   <View className="item-info">
                     <View className="title">{item.title}</View>
                     <View className="discount">{item.iconText}</View>

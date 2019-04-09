@@ -58,6 +58,61 @@
     -webkit-flex-grow: 1;
     flex-grow: 1;
 
+    .title{
+      font-size: 38px;
+      text-align: center;
+      padding: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      font-weight: bold;
+    }
+    .flash-sale-box{
+      width: 750px;
+      padding: 0 30px;
+      box-sizing: border-box;
+      overflow: hidden;
 
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap:  wrap;// 子元素超过容器可多行排列
+      align-content:flex-start; //多轴对齐方式
+      .item-box{
+        width: 330px;
+        border: 0;
+        margin: 0 30px 40px 0;
+        box-sizing: border-box;
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+        .img-box{
+          image{
+            width: 330px;
+            height: 440px;
+          }
+        }
+        .info{
+          color: #333333;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          padding: 0 10px;
+        }
+        .price-box{
+          padding: 0 10px;
+          .price{
+            color: red;
+            display: inline-block;
+          }
+          .old-price{
+            color: #999999;
+            text-decoration: line-through;
+            margin-left: 10px;
+            display: inline-block;
+          }
+        }
+
+      }
+    }
   }
 }

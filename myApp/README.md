@@ -47,7 +47,10 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 ### 6,如何设置沉浸式头部？（√）
 见文档：https://nervjs.github.io/taro/docs/tutorial.html#window
 
-### 7，
+### 7，图片必须设置高度才能显示？
+场景：图片被拉伸，不能自动缩放，css的自动缩放auto无效。\
+解决方案：
+
 
 # 四，旅途
 1，环境搭建（√）\
