@@ -65,6 +65,7 @@ class Index extends Component{
             )
           }
         </Swiper>
+        <View className="back">＜</View>
         <View>
           <View className="price">{this.detailList.sku[0].price}</View>
           <View className="old-price">{this.detailList.sku[0].oldPrice}</View>
