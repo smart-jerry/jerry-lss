@@ -11,7 +11,10 @@ class Index extends Component{
   constructor (props){
     super(props)
   }
-  
+  config = {
+    navigationBarTitleText: '详情页',
+    navigationStyle:'custom'
+  }
   componentWillMount(){
     this.detailList = {
       'id':'111111',
