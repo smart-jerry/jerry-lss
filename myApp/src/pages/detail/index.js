@@ -47,7 +47,7 @@ class Index extends Component{
             this.detailList.images.map((item)=>
               <SwiperItem>
                 <View className='images-item'>
-                  <Image className="img-auto-height" src={item}/>
+                  <Image src={item} mode="aspectFit" />
                 </View>
               </SwiperItem>
             )

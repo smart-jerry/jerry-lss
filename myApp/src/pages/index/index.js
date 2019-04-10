@@ -115,7 +115,7 @@ class Index extends Component {
                 this.flashList.map((item)=>
                   <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
-                      <Image className="img-auto-width" src={item.imgUrl} />
+                      <Image src={item.imgUrl} mode="aspectFit" />
                     </View>
                     <View className="title">{item.title}</View>
                     <View className="price-box">

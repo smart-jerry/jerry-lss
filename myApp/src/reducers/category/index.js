@@ -2,11 +2,12 @@
  * Created by jerry on 2019/3/21.
  */
 import goods1 from '../../statics/goods/good1.jpg';
+import goods2 from '../../statics/goods/good2.jpg';
 const initList = [
   {"name":"观音吊坠","catList":[
     {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克11","iconText":"促销","price":"￥6888"},
-    {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克222","iconText":"促销","price":"￥6888"},
-    {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克33","iconText":"促销","price":"￥6888"},
+    {"img":goods2,"title":"原矿高瓷蓝观音吊坠16.8克222","iconText":"促销","price":"￥6888"},
+    {"img":goods2,"title":"原矿高瓷蓝观音吊坠16.8克33","iconText":"促销","price":"￥6888"},
     {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克44","iconText":"促销","price":"￥6888"},
     {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克","iconText":"促销","price":"￥6888"},
     {"img":goods1,"title":"原矿高瓷蓝观音吊坠16.8克","iconText":"促销","price":"￥6888"},
