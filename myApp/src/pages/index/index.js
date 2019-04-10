@@ -39,10 +39,10 @@ class Index extends Component {
       {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
-      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
   
@@ -51,9 +51,9 @@ class Index extends Component {
       {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥1288','oldPrice':'￥2000','inventory':1},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
-      {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
+      {'id':'15856','imgUrl':good2,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':2},
       {'id':'15856','imgUrl':goods,'title':'nfo','price':'￥2.6','oldPrice':'￥8868','inventory':0}
     ];
@@ -115,7 +115,7 @@ class Index extends Component {
                 this.flashList.map((item)=>
                   <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
-                      <Image src={item.imgUrl} mode="aspectFit" />
+                      <Image src={item.imgUrl} mode="widthFix" />
                     </View>
                     <View className="title">{item.title}</View>
                     <View className="price-box">
@@ -131,12 +131,12 @@ class Index extends Component {
   
           <View>
             <View className="module-title">新品特惠</View>
-            <View className="flash-sale-box">
+            <View className="news-box">
               {
                 this.newList.map((item)=>
                   <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
-                      <Image className="img-auto-width" src={item.imgUrl} />
+                      <Image src={item.imgUrl} mode="widthFix" />
                     </View>
                     <View className="title">{item.title}</View>
                     <View className="price-box">
@@ -152,12 +152,12 @@ class Index extends Component {
   
           <View>
             <View className="module-title">为你推荐</View>
-            <View className="flash-sale-box">
+            <View className="recommend-box">
               {
                 this.recommendList.map((item)=>
                   <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
-                      <Image className="img-auto-width" src={item.imgUrl} />
+                      <image src={item.imgUrl} mode="widthFix" />
                     </View>
                     <View className="title">{item.title}</View>
                     <View className="price-box">

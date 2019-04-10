@@ -69,6 +69,110 @@
     .flash-sale-box{
       width: 750px;
       padding: 0 30px;
+      // 一行两列
+      -webkit-column-count: 2; /* Chrome, Safari, Opera */
+      -moz-column-count: 2; /* Firefox */
+      column-count: 2;
+      -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+      -moz-column-gap: 30px; /* Firefox */
+      column-gap: 30px;
+
+      box-sizing: border-box;
+      .item-box{
+        border: 0;
+        box-sizing: border-box;
+        -webkit-column-break-inside: avoid; /*避免在元素内部断行并产生新列*/
+        -moz-column-break-inside: avoid;
+        column-break-inside: avoid;
+        margin-bottom: 30px;
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+        .img-box{
+          image{
+            width: 330px;
+          }
+        }
+        .title{
+          color: #333333;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          padding: 0 10px;
+          font-size: 28px;
+        }
+        .price-box{
+          padding: 0 10px;
+          .price{
+            color: red;
+            display: inline-block;
+          }
+          .old-price{
+            color: #999999;
+            text-decoration: line-through;
+            margin-left: 10px;
+            display: inline-block;
+          }
+        }
+
+      }
+    }
+
+    .news-box{
+      width: 750px;
+      padding: 0 30px;
+      // 一行两列
+      -webkit-column-count: 2; /* Chrome, Safari, Opera */
+      -moz-column-count: 2; /* Firefox */
+      column-count: 2;
+      -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+      -moz-column-gap: 30px; /* Firefox */
+      column-gap: 30px;
+
+      box-sizing: border-box;
+      .item-box{
+        border: 0;
+        box-sizing: border-box;
+        -webkit-column-break-inside: avoid; /*避免在元素内部断行并产生新列*/
+        -moz-column-break-inside: avoid;
+        column-break-inside: avoid;
+        margin-bottom: 30px;
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+        .img-box{
+          image{
+            width: 330px;
+          }
+        }
+        .title{
+          color: #333333;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          padding: 0 10px;
+          font-size: 28px;
+        }
+        .price-box{
+          padding: 0 10px;
+          .price{
+            color: red;
+            display: inline-block;
+          }
+          .old-price{
+            color: #999999;
+            text-decoration: line-through;
+            margin-left: 10px;
+            display: inline-block;
+          }
+        }
+
+      }
+    }
+
+    .recommend-box{
+      width: 750px;
+      padding: 0 30px;
       box-sizing: border-box;
       overflow: hidden;
 
@@ -87,9 +191,16 @@
           margin-right: 0;
         }
         .img-box{
+          width: 330px;
+          height: 440px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #f2f2f2;
           image{
-            width: 330px;
-            height: 440px;
+            width: 100%;
+            height: auto;
           }
         }
         .title{
