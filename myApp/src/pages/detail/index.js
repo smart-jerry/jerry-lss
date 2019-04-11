@@ -45,6 +45,19 @@ class Index extends Component{
       }]
     }
   }
+  gotoCart(){
+    Taro.switchTab({
+      url:'/pages/cart/index'
+    })
+  }
+  gotoliveChat(){
+    Taro.navigateTo({
+      url:'/pages/customize/index'
+    })
+  }
+  gotoBack(){
+    Taro.navigateBack()
+  }
   render(){
     return(
       <View className="detail-box">
@@ -65,7 +78,7 @@ class Index extends Component{
             )
           }
         </Swiper>
-        <View className="back">
+        <View className="back" onClick={this.gotoBack.bind(this)}>
           <Image src="../../statics/images/back.svg" mode="aspectFit" />
         </View>
         <View className="price-box">
@@ -103,11 +116,11 @@ class Index extends Component{
         </View>
         {/*购买按钮*/}
         <View class="addToCart-box">
-          <View className="carts">
+          <View className="carts" onClick={this.gotoCart.bind(this)}>
             <Image className="icon" src="../../statics/images/cart.png" mode="aspectFit" />
             <Text>购物车</Text>
           </View>
-          <View className="live-chat">
+          <View className="live-chat" onClick={this.gotoliveChat.bind(this)}>
             <Image className="icon" src="../../statics/images/livechat.svg" mode="aspectFit" />
             <Text>客服</Text>
           </View>
