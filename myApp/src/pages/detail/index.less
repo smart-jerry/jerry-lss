@@ -109,24 +109,56 @@
     }
   }
   /*加购*/
-  .addToCart{
+  .addToCart-box{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
-    padding: 10px;
+    height: 120px;
     text-align: center;
-    border-top: 1px solid #d5d5d5;
     box-sizing: border-box;
     background: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .carts{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      color: #999999;
+      .icon{
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin-bottom: 5px;
+      }
+    }
+    .live-chat{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      color: #999999;
+      .icon{
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin-bottom: 5px;
+        color: blue;
+      }
+    }
     .btn-add{
-      height: 80px;
-      line-height: 80px;
+      flex-grow: 1;
+      height: 120px;
+      line-height: 120px;
       text-align: center;
       background: red;
       color: #ffffff;
-      border-radius: 50px;
     }
   }
 }

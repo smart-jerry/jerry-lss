@@ -3,10 +3,9 @@
  */
 
 import Taro, {Component} from '@tarojs/taro'
-import {View, Image, RichText} from '@tarojs/components';
+import {View, Image, Text} from '@tarojs/components';
 import goods from '../../statics/goods/good1.jpg'
 import good2 from '../../statics/goods/good2.jpg'
-import liveChat from '../common/livechat/index'
 
 import './index.less';
 
@@ -102,10 +101,16 @@ class Index extends Component{
             )
           }
         </View>
-        {/*在线客服*/}
-        <liveChat />
         {/*购买按钮*/}
-        <View class="addToCart">
+        <View class="addToCart-box">
+          <View className="carts">
+            <Image className="icon" src="../../statics/images/cart.png" mode="aspectFit" />
+            <Text>购物车</Text>
+          </View>
+          <View className="live-chat">
+            <Image className="icon" src="../../statics/images/livechat.svg" mode="aspectFit" />
+            <Text>客服</Text>
+          </View>
           <View className="btn-add">加入购物车</View>
         </View>
       </View>
