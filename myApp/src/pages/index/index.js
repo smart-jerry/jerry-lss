@@ -78,16 +78,19 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  /*跳转-demo*/
   gotoDemo(url){
     Taro.navigateTo({
       url: url
     })
   }
+  /*跳转-搜索*/
   goToSearch(){
     Taro.navigateTo({
       url: '/pages/search/index'
     })
   }
+  /*跳转-商品详情*/
   gotoDedail(id){
     Taro.navigateTo({
       url: '/pages/detail/index?id'+id
@@ -96,6 +99,7 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
+        {/*头部*/}
         <View class="header">
           <View className="customize-box">
             <navigator url="/pages/customize/index" hover-class="navigator-hover">
@@ -107,7 +111,9 @@ class Index extends Component {
             <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
           </View>
         </View>
+        {/*body*/}
         <ScrollView scrollY="true" scrollWithAnimation="true" className="index-body">
+          {/*限时秒杀*/}
           <View>
             <View className="module-title">限时秒杀</View>
             <View className="flash-sale-box">
@@ -128,7 +134,7 @@ class Index extends Component {
             </View>
           </View>
   
-  
+          {/*新品特惠*/}
           <View>
             <View className="module-title">新品特惠</View>
             <View className="news-box">
@@ -149,7 +155,7 @@ class Index extends Component {
             </View>
           </View>
   
-  
+          {/*为你推荐*/}
           <View>
             <View className="module-title">为你推荐</View>
             <View className="recommend-box">
@@ -169,9 +175,10 @@ class Index extends Component {
               }
             </View>
           </View>
-          
+          {/*demo*/}
           <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
         </ScrollView>
+        {/*在线客服*/}
         <liveChat />
       </View>
     )

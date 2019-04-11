@@ -45,21 +45,25 @@ class Index extends Component{
       }]
     }
   }
+  /*购物车*/
   gotoCart(){
     Taro.switchTab({
       url:'/pages/cart/index'
     })
   }
+  /*客服*/
   gotoliveChat(){
     Taro.navigateTo({
       url:'/pages/customize/index'
     })
   }
+  /*返回*/
   gotoBack(){
     Taro.navigateBack()
   }
   render(){
     return(
+      /*滚动轮播*/
       <View className="detail-box">
         <Swiper
           className='images-box'
@@ -78,16 +82,18 @@ class Index extends Component{
             )
           }
         </Swiper>
+        {/*左上角返回按钮*/}
         <View className="back" onClick={this.gotoBack.bind(this)}>
           <Image src="../../statics/images/back.svg" mode="aspectFit" />
         </View>
+        {/*价格*/}
         <View className="price-box">
           <View className="price">{this.detailList.sku[0].price}</View>
           <View className="mark">{this.detailList.iconText}</View>
         </View>
         <View className="old-price">价格：<del>{this.detailList.sku[0].oldPrice}</del></View>
         <View className="title">{this.detailList.title}</View>
-        
+        {/*介绍*/}
         <View className="info mt30">
           <View className="info-title">宝贝作用：</View>
           <View className="mt20">首先，绿松石含有大量的磷酸盐类矿物质，能有效促进人体细胞新陈代谢，提高佩戴者的身体免疫力。</View>
@@ -98,6 +104,7 @@ class Index extends Component{
           <View className="info-title">卖家郑重提示：</View>
           {this.detailList.specification}
         </View>
+        {/*图文详情*/}
         <View className="introduction mt30">
           <View className="info-title">----------------- 详情 ------------------</View>
           {
