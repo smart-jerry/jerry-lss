@@ -38,16 +38,17 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
-  
+  /*类目选择*/
   checkItem(index){
     this.setState({
       selectIndex:index
     })
   }
-  
+  /*商品上拉加载，下一页-分页*/
   nextpage(){
     console.log('into next page。。。');
   }
+  /*搜索*/
   goToSearch(){
     Taro.navigateTo({
       url: '/pages/search/index'
@@ -57,23 +58,29 @@ class Index extends Component {
   render () {
     return (
       <View className='category-box'>
+        {/*头部导航*/}
         <View class="header">
+          {/*定制*/}
           <View className="customize-box">
             <navigator url="/pages/customize/index" hover-class="navigator-hover">
               我要定制
             </navigator>
           </View>
+          {/*搜索*/}
           <View className="search-box">
             <Icon size='20' type='search' />
             <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
           </View>
         </View>
+        {/*类目*/}
         <View class="category-body">
+          {/*类目tab*/}
           <View className="category-tab">
             {this.props.categoryList.map((item,index)=>
               <View className={`tab-item ${index===this.state.selectIndex?"on":""}`} onClick={this.checkItem.bind(this,index)}>{item.name}</View>
             )}
           </View>
+          {/*每个类目下的商品*/}
           <ScrollView scrollY="true" scrollWithAnimation="true" onScrollToLower={this.nextpage} className="category-contain">
             {
               this.props.categoryList[this.state.selectIndex].catList.map((item,index)=>

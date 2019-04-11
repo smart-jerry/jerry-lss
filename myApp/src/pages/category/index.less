@@ -6,6 +6,7 @@
   height: 100vh;/*此次若用%，头部将不能定位*/
   overflow: hidden;
   font-size: 28px;
+  /*头部导航*/
  .header{
    width: 100%;
    background: orange;
@@ -13,6 +14,7 @@
    padding: 20px 30px;
    display: flex;
    align-items: center;
+   /*定制*/
    .customize-box{
      width: 40%;
      .navigator{
@@ -22,6 +24,7 @@
        color: blue;
      }
    }
+   /*搜索*/
    .search-box{
      border: 1px solid #ffffff;
      background: #ffffff;
@@ -47,6 +50,7 @@
      }
    }
  }
+  /*类目*/
   .category-body{
     box-sizing: border-box;
     overflow-y: auto;
@@ -60,6 +64,7 @@
 
     display: flex;
     align-items: center;
+    /*类目tab*/
     .category-tab{
       width: 230px;
       height: 100%;
@@ -78,6 +83,7 @@
         }
       }
     }
+    /*类目下商品*/
     .category-contain{
       /*子元素伸缩*/
       -webkit-box-flex: 1.0;
@@ -96,16 +102,19 @@
         &:last-child{
           border: 0;
         }
+        /*图片*/
         .item-img{
           width: 230px;
           height: 240px;
           overflow: hidden;
           margin-right: 10px;
         }
+        /*商品信息*/
         .item-info{
           .title{
             margin-bottom: 10px;
           }
+          /*商品标记*/
           .discount{
             padding: 5px 10px;
             background: orange;
@@ -113,6 +122,7 @@
             margin-bottom: 20px;
             display: inline-block;
           }
+          /*价格，加购*/
           .operate-box{
             display: flex;
             justify-content: space-between;
