@@ -27,7 +27,7 @@ class App extends Component {
       'pages/demo/index',
       'pages/customize/index',
       'pages/search/index',
-      'pages/detail/index',
+      'pages/detail/index'
     ],
     window: {
       navigationBarTextStyle: 'black',

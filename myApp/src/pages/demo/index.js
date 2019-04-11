@@ -7,7 +7,7 @@ import { View, Button, Text, Input,Image } from '@tarojs/components'
 import {add, del,toggle, getImg} from '../../actions/demo/index'
 import './index.less'
 
-import logo from '../../statics/images/logo.svg'
+import logo from '../../statics/images/back.svg'
 //数据传递
 @connect(({hwAry,getImg}) => ({
   hwAry,
