@@ -21,14 +21,14 @@ class Index extends Component{
     this.detailList = {
       'id':'111111',
       'images':[goods,good2,goods],
-      'title':'info',
+      'title':'精品佛形吊坠',
       'iconText':'新品特惠',
       'specification':'卖家特殊说明',
       'sku':[{
         'skuId':2225,
         'inventory':1,
-        'price':'￥1288',
-        'oldPrice':'￥2000',
+        'price':'￥6888',
+        'oldPrice':'￥12888',
         'skuImage':'',
         'weight':'3.6g',
         'size':'15*25',
@@ -36,8 +36,8 @@ class Index extends Component{
       },{
         'skuId':333,
         'inventory':0,
-        'price':'￥1288',
-        'oldPrice':'￥2000',
+        'price':'￥6888',
+        'oldPrice':'￥12888',
         'skuImage':'',
         'weight':'3.6g',
         'size':'15*25',

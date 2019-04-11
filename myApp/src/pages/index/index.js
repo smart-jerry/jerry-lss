@@ -107,7 +107,7 @@ class Index extends Component {
             <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
           </View>
         </View>
-        <View className="index-body">
+        <ScrollView scrollY="true" scrollWithAnimation="true" className="index-body">
           <View>
             <View className="module-title">限时秒杀</View>
             <View className="flash-sale-box">
@@ -171,7 +171,7 @@ class Index extends Component {
           </View>
           
           <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
-        </View>
+        </ScrollView>
         <liveChat />
       </View>
     )
