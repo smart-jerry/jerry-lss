@@ -99,12 +99,10 @@ class Index extends Component{
           {this.detailList.specification}
         </View>
         <View className="introduction mt30">
-          <View className="info-title">----------- 详情 ------------</View>
+          <View className="info-title">----------------- 详情 ------------------</View>
           {
             this.detailList.sku.map((item)=>
               <View className="about">
-                {/*<View className="txt-left">尺寸：{item.size}</View>
-                <View className="txt-left">克重：{item.weight}</View>*/}
                 {
                   item.detailImages.map((detailImg)=>
                     <Image src={detailImg} mode="widthFix" />
