@@ -20,7 +20,6 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/detail/index',
       'pages/index/index',
       'pages/category/index',
       'pages/cart/index',
@@ -28,6 +27,7 @@ class App extends Component {
       'pages/demo/index',
       'pages/customize/index',
       'pages/search/index',
+      'pages/detail/index',
     ],
     window: {
       navigationBarTextStyle: 'black',
