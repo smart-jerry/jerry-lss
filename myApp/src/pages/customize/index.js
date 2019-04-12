@@ -3,9 +3,8 @@
  */
 
 import Taro, {Component} from '@tarojs/taro';
-import {View, Form, Text, Input, RadioGroup, Label, Radio, Button} from '@tarojs/components';
+import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Camera} from '@tarojs/components';
 import './index.less';
-
 class Index extends Component{
   config = {
     navigationBarTitleText: '定制'
@@ -57,7 +56,9 @@ class Index extends Component{
       //宝贝类型选择
       selectType:'',
       // 戒指封口类型选择
-      selectRangType:''
+      selectRangType:'',
+      // 选择的图片
+      imgList:[]
     }
   }
   //宝贝类型选择
@@ -75,6 +76,26 @@ class Index extends Component{
       selectRangType:e.detail.value
     })
   }
+  
+  // 拍照
+  takePhoto(){
+    let _this = this;
+    console.log('photos');
+    Taro.chooseImage({
+      count: 3,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        console.log(res);
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        _this.setState({
+          imgList:_this.state.imgList.concat(tempFilePaths)
+        })
+      }
+    })
+  }
+  
   render(){
     return(
       <View className="custom-box">
@@ -155,7 +176,16 @@ class Index extends Component{
           
           <View className="form-group">
             <Text>宝贝图样：</Text>
-            <Input type='text' placeholder='上传图片样式'/>
+            <View className="img-list">
+              {
+                this.state.imgList.map((item)=>
+                  <Image src={item} mode="widthFix" />
+                )
+              }
+              <View className="img-btn" onClick={this.takePhoto.bind(this)}>
+                拍照
+              </View>
+            </View>
           </View>
           <View className="form-btn">
             <Button className='btn-max-w mr30' form-type="reset" size="default" plain type='default'>重置</Button>

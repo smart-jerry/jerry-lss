@@ -3,18 +3,45 @@
   padding: 30px;
   .form-group{
     margin-bottom: 50px;
+    /*输入标题*/
     text{
       padding: 10px;
       margin-bottom: 20px;
     }
+    /*单选框*/
     .radio-list__label{
       margin-right: 20px;
     }
+    /*输入框*/
     input{
       border: 1px solid #f2f2f2;
       margin-top: 10px;
     }
+    /*图片列表*/
+    .img-list{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap:  wrap;// 子元素超过容器可多行排列
+      align-content:flex-start; //多轴对齐方式
+      image{
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        margin: 20px 20px 30px 20px;
+      }
+      .img-btn{
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        line-height: 120px;
+        text-align: center;
+        margin: 20px 20px 30px 20px;
+      }
+    }
   }
+  /*表单按钮*/
   .form-btn{
     display: flex;
     justify-content: center;
