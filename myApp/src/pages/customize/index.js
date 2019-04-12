@@ -17,11 +17,11 @@ class Index extends Component{
       // 定制类型
       typeList:[{
         'value':'0',
-        'checked':true,
+        'checked':false,
         'text':'戒指'
       },{
           'value':'1',
-          'checked':false,
+          'checked':true,
           'text':'吊坠'
         },{
         'value':'2',
@@ -35,7 +35,7 @@ class Index extends Component{
       // 戒指封口类型
       rangList:[{
         'value':'0',
-        'checked':true,
+        'checked':false,
         'text':'活口'
       },{
       'value':'1',
@@ -46,7 +46,7 @@ class Index extends Component{
       QualityList:[
         {
           'value':'0',
-          'checked':true,
+          'checked':false,
           'text':'玫瑰金'
         },{
           'value':'1',
@@ -55,9 +55,9 @@ class Index extends Component{
         }
       ],
       //宝贝类型选择
-      selectType:0,
+      selectType:'',
       // 戒指封口类型选择
-      selectRangType:0
+      selectRangType:''
     }
   }
   //宝贝类型选择
