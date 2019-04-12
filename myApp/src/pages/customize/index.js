@@ -94,7 +94,7 @@ class Index extends Component{
       }
     })
   }
-  // 删除上传图片
+  // 删除上传的图片
   deleteImg(index){
     const newList = [...this.state.imgList];
     const indexI = newList.findIndex((item,i) => i===index);
