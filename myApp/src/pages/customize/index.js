@@ -3,7 +3,7 @@
  */
 
 import Taro, {Component} from '@tarojs/taro';
-import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Icon} from '@tarojs/components';
+import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Icon, Textarea} from '@tarojs/components';
 import './index.less';
 class Index extends Component{
   config = {
@@ -195,6 +195,10 @@ class Index extends Component{
               }
               <Image className="img-btn" onClick={this.takePhoto.bind(this)} src="../../statics/images/photo-icon.png" mode="widthFix" />
             </View>
+          </View>
+          <View className="form-group">
+            <Text>备注：</Text>
+            <Textarea className="more-info" placeholder="其他信息请在此备注" maxlength="260"  />
           </View>
           <View className="form-btn">
             <Button className='btn-max-w mr30' form-type="reset" size="default" plain type='default'>重置</Button>
