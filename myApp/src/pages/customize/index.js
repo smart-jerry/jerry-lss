@@ -156,6 +156,7 @@ class Index extends Component{
     console.log(formData);
     if(this.checkForm(formData)){
       // 数据提交
+      console.log('form submit。。。');
     }
   }
   render(){
