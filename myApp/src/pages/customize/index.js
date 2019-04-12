@@ -3,7 +3,7 @@
  */
 
 import Taro, {Component} from '@tarojs/taro';
-import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Camera} from '@tarojs/components';
+import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Icon} from '@tarojs/components';
 import './index.less';
 class Index extends Component{
   config = {
@@ -80,13 +80,12 @@ class Index extends Component{
   // 拍照
   takePhoto(){
     let _this = this;
-    console.log('photos');
     Taro.chooseImage({
       count: 3,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-        console.log(res);
+//        console.log(res);
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         _this.setState({
@@ -95,7 +94,16 @@ class Index extends Component{
       }
     })
   }
-  
+  // 删除上传图片
+  deleteImg(index){
+    const newList = [...this.state.imgList];
+    const indexI = newList.findIndex((item,i) => i===index);
+//    console.log(indexI,'==================indexI');
+    newList.splice(indexI,1);
+    this.setState({
+      imgList:newList
+    })
+  }
   render(){
     return(
       <View className="custom-box">
@@ -178,13 +186,14 @@ class Index extends Component{
             <Text>宝贝图样：</Text>
             <View className="img-list">
               {
-                this.state.imgList.map((item)=>
-                  <Image src={item} mode="widthFix" />
+                this.state.imgList.map((item, i)=>
+                  <View className="img-item">
+                    <Image src={item} mode="widthFix" />
+                    <Icon size='20' type='clear' onClick={this.deleteImg.bind(this, i)} />
+                  </View>
                 )
               }
-              <View className="img-btn" onClick={this.takePhoto.bind(this)}>
-                拍照
-              </View>
+              <Image className="img-btn" onClick={this.takePhoto.bind(this)} src="../../statics/images/photo-icon.png" mode="widthFix" />
             </View>
           </View>
           <View className="form-btn">

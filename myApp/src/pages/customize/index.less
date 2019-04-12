@@ -25,19 +25,29 @@
       align-items: center;
       flex-wrap:  wrap;// 子元素超过容器可多行排列
       align-content:flex-start; //多轴对齐方式
-      image{
+      .img-item{
         width: 120px;
-        height: 120px;
-        overflow: hidden;
-        margin: 20px 20px 30px 20px;
+        position: relative;
+        margin: 10px 10px 20px 10px;
+        padding: 10px;
+        image{
+          width: 120px;
+          height: 120px;
+          overflow: hidden;
+        }
+        // clear mark
+        icon{
+          position: absolute;
+          top:0;
+          right: 0;
+        }
       }
+
       .img-btn{
         width: 120px;
         height: 120px;
         overflow: hidden;
-        line-height: 120px;
         text-align: center;
-        margin: 20px 20px 30px 20px;
       }
     }
   }
