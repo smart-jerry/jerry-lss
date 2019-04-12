@@ -65,6 +65,9 @@ class Index extends Component{
     this.setState({
       selectType:e.detail.value
     })
+    this.setState({
+      selectRangType:0
+    })
   }
   //戒指封口类型选择
   selectRangTypeEvt(e){
@@ -88,10 +91,9 @@ class Index extends Component{
               })}
             </RadioGroup>
           </View>
-          <View>aaa:{this.state.selectType}---{this.state.selectType === 0},,,,,bbb:{this.state.selectRangType}---{this.state.selectRangType === 1}</View>
           {/*戒指镶嵌材质*/}
           {
-            this.state.selectType === 0 &&
+            this.state.selectType.toString() === '0' &&
               <View className="form-group"  name="bbb">
                 <Text>戒指镶嵌材质：</Text>
                 <RadioGroup>
@@ -108,7 +110,7 @@ class Index extends Component{
           }
           {/*戒指封口类型*/}
           {
-            this.state.selectType === 0 &&
+            this.state.selectType.toString() === '0' &&
               <View className="form-group">
                 <Text>戒指封口类型：</Text>
                 <RadioGroup onChange={this.selectRangTypeEvt} name="aaa">
@@ -125,7 +127,7 @@ class Index extends Component{
           }
           {/*手指尺寸*/}
           {
-            this.state.selectRangType === 1 &&
+            (this.state.selectType.toString() === '0' && this.state.selectRangType.toString() === '1') &&
               <View className="form-group">
                 <Text>手指尺寸(单位:mm)：</Text>
                 <Input type='digit' placeholder='请输入手指尺寸'/>
@@ -135,7 +137,7 @@ class Index extends Component{
           
           {/*耳钉镶嵌品质*/}
           {
-            this.state.selectType === 3 &&
+            this.state.selectType.toString() === '3' &&
               <View className="form-group" name="ddd">
                 <Text>耳钉镶嵌材质：</Text>
                 <RadioGroup>
