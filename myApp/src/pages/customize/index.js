@@ -104,10 +104,16 @@ class Index extends Component{
       imgList:newList
     })
   }
+  // 表单提交
+  submitForm(e){
+    let formData = e.detail.value;
+    formData['imgList'] = this.state.imgList
+    console.log(formData);
+  }
   render(){
     return(
       <View className="custom-box">
-        <Form>
+        <Form onSubmit={this.submitForm}>
           <View className='form-group'>
             <Text>宝贝类型：</Text>
             <RadioGroup onChange={this.selectTypeEvt} name="typeSelect">
@@ -123,9 +129,9 @@ class Index extends Component{
           {/*戒指镶嵌材质*/}
           {
             this.state.selectType.toString() === '0' &&
-              <View className="form-group"  name="bbb">
+              <View className="form-group">
                 <Text>戒指镶嵌材质：</Text>
-                <RadioGroup>
+                <RadioGroup name="rangQuality">
                   {this.state.QualityList.map((item, i) => {
                     return (
                       <Label className='radio-list__label' for={i} key={i}>
@@ -142,7 +148,7 @@ class Index extends Component{
             this.state.selectType.toString() === '0' &&
               <View className="form-group">
                 <Text>戒指封口类型：</Text>
-                <RadioGroup onChange={this.selectRangTypeEvt} name="aaa">
+                <RadioGroup onChange={this.selectRangTypeEvt} name="rangType">
                   {this.state.rangList.map((item, i) => {
                     return (
                       <Label className='radio-list__label' for={i} key={i}>
@@ -159,7 +165,7 @@ class Index extends Component{
             (this.state.selectType.toString() === '0' && this.state.selectRangType.toString() === '1') &&
               <View className="form-group">
                 <Text>手指尺寸(单位:mm)：</Text>
-                <Input type='digit' placeholder='请输入手指尺寸'/>
+                <Input type='digit' name="fingerSize" placeholder='请输入手指尺寸'/>
               </View>
             
           }
@@ -167,9 +173,9 @@ class Index extends Component{
           {/*耳钉镶嵌品质*/}
           {
             this.state.selectType.toString() === '3' &&
-              <View className="form-group" name="ddd">
+              <View className="form-group">
                 <Text>耳钉镶嵌材质：</Text>
-                <RadioGroup>
+                <RadioGroup name="earQuality">
                   {this.state.QualityList.map((item, i) => {
                     return (
                       <Label className='radio-list__label' for={i} key={i}>
@@ -198,7 +204,7 @@ class Index extends Component{
           </View>
           <View className="form-group">
             <Text>备注：</Text>
-            <Textarea className="more-info" placeholder="其他信息请在此备注" maxlength="260"  />
+            <Textarea className="more-info" name="moreInfo" placeholder="其他信息请在此备注" maxlength="260"  />
           </View>
           <View className="form-btn">
             <Button className='btn-max-w mr30' form-type="reset" size="default" plain type='default'>重置</Button>
