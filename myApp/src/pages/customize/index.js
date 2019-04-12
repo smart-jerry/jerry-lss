@@ -104,11 +104,59 @@ class Index extends Component{
       imgList:newList
     })
   }
+  // 表单校验
+  checkForm(formData){
+    if(formData.typeSelect===''){
+      Taro.showToast({
+        'title':'请选择宝贝类型！'
+      })
+      return false;
+    }
+    if(formData.typeSelect.toString() === '3' &&(!formData.earQuality || formData.earQuality==='')){
+      Taro.showToast({
+        'title':'请选择耳钉的镶嵌材质！'
+      })
+      return false;
+    }
+    
+    if(formData.typeSelect.toString() === '0' && (!formData.rangQuality || formData.rangQuality === '')){
+      Taro.showToast({
+        'title':'请选择戒指的镶嵌材质！'
+      })
+      return false;
+    }
+  
+    if(formData.typeSelect.toString() === '0' && (!formData.rangType || formData.rangType === '')){
+      Taro.showToast({
+        'title':'请选择戒指的封口类型！'
+      })
+      return false;
+    }
+  
+    if(formData.typeSelect.toString() === '0' && (formData.rangType.toString() === '1' && (!formData.fingerSize || formData.fingerSize === ''))){
+      Taro.showToast({
+        'title':'请输入手指尺寸！'
+      })
+      return false;
+    }
+  
+    if(formData.imgList.length<1){
+      Taro.showToast({
+        'title':'请上次定制的图样信息！'
+      })
+      return false;
+    }
+    
+    return true;
+  }
   // 表单提交
   submitForm(e){
     let formData = e.detail.value;
     formData['imgList'] = this.state.imgList
     console.log(formData);
+    if(this.checkForm(formData)){
+      // 数据提交
+    }
   }
   render(){
     return(
