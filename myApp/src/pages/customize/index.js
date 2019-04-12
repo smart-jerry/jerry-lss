@@ -35,7 +35,7 @@ class Index extends Component{
       // 戒指封口类型
       rangList:[{
         'value':'0',
-        'checked':false,
+        'checked':true,
         'text':'活口'
       },{
       'value':'1',
@@ -50,7 +50,7 @@ class Index extends Component{
           'text':'玫瑰金'
         },{
           'value':'1',
-          'checked':false,
+          'checked':true,
           'text':'白银'
         }
       ],
