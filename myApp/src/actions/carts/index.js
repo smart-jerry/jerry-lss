@@ -12,7 +12,8 @@ export const addCarts = (action) => {
     title:action.title,
     price:action.price,
     skuImage:action.skuImage,
-    num:1
+    num:1,
+    checked:false
   }
 }
 

@@ -19,7 +19,8 @@ const cartList = (state = [], action) => {
           title:action.title,
           price:action.price,
           skuImage:action.skuImage,
-          num:action.num
+          num:action.num,
+          checked:action.checked
         }]
       }
     case 'UPDATE_CART_NUM':

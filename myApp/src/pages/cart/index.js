@@ -62,15 +62,6 @@ class Index extends Component {
   // 选择商品下单
   checkGood(e){
     console.log(e.detail,'============000000000000')
-    
-    /*const item = [];
-    this.setState({
-      checkList:[...this.state.checkList,{
-        id:item.id,
-        price:item.price,
-        num:item.num
-      }]
-    })*/
   }
   render () {
     return (
