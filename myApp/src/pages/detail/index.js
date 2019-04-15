@@ -4,14 +4,32 @@
 
 import Taro, {Component} from '@tarojs/taro'
 import {View, Image, Text} from '@tarojs/components';
+import { connect } from '@tarojs/redux';
+import {addCarts} from '../../actions/carts/index';
 import goods from '../../statics/goods/good1.jpg'
 import good2 from '../../statics/goods/good2.jpg'
 
 import './index.less';
 
+@connect(({ cartList }) => ({
+  cartList
+}), (dispatch) => ({
+  addCart (id, skuId) {
+    const option = {
+      type:'ADD_CART',
+      id:id,
+      skuId:skuId
+    }
+    dispatch(addCarts(option))
+  }
+}))
+
 class Index extends Component{
   constructor (props){
     super(props);
+    this.state={
+      selectSku:0
+    }
   }
   config = {
     navigationBarTitleText: '详情页',
@@ -124,12 +142,13 @@ class Index extends Component{
           <View className="carts" onClick={this.gotoCart.bind(this)}>
             <Image className="icon" src="../../statics/images/cart.png" mode="aspectFit" />
             <Text>购物车</Text>
+            <View className="cart-num">{this.props.cartList.length}</View>
           </View>
           <View className="live-chat" onClick={this.gotoliveChat.bind(this)}>
             <Image className="icon" src="../../statics/images/liveChat.svg" mode="aspectFit" />
             <Text>客服</Text>
           </View>
-          <View className="btn-add">加入购物车</View>
+          <View className="btn-add" onClick={this.props.addCart.bind(this,this.detailList.id,this.state.selectSku)}>加入购物车</View>
         </View>
       </View>
     )
