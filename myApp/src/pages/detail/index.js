@@ -126,7 +126,7 @@ class Index extends Component{
             <Text>购物车</Text>
           </View>
           <View className="live-chat" onClick={this.gotoliveChat.bind(this)}>
-            <Image className="icon" src="../../statics/images/livechat.svg" mode="aspectFit" />
+            <Image className="icon" src="../../statics/images/liveChat.svg" mode="aspectFit" />
             <Text>客服</Text>
           </View>
           <View className="btn-add">加入购物车</View>

@@ -63,7 +63,7 @@ class Index extends Component {
           {/*定制*/}
           <View className="customize-box">
             <navigator url="/pages/customize/index" hover-class="navigator-hover">
-              我要定制
+              私人定制
             </navigator>
           </View>
           {/*搜索*/}

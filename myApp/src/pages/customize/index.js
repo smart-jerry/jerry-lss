@@ -5,6 +5,8 @@
 import Taro, {Component} from '@tarojs/taro';
 import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Icon, Textarea} from '@tarojs/components';
 import './index.less';
+import myPhoto from '../../statics/images/photoIcon.png'
+
 class Index extends Component{
   config = {
     navigationBarTitleText: '定制'
@@ -261,7 +263,7 @@ class Index extends Component{
                   </View>
                 )
               }
-              <Image className="img-btn" onClick={this.takePhoto.bind(this)} src="../../statics/images/photo-icon.png" mode="widthFix" />
+              <Image className="img-btn" src={myPhoto} mode="widthFix" onClick={this.takePhoto.bind(this)} />
             </View>
           </View>
           <View className="form-group">
