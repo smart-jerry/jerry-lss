@@ -1,19 +1,21 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Checkbox, Label, Image, Radio } from '@tarojs/components'
+import { View, Text, Checkbox, Label, Image, CheckboxGroup } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import {update} from '../../actions/carts/index'
+import {update, updateCheck} from '../../actions/carts/index'
 
 import './index.less'
 
 @connect(({ cartList }) => ({
   cartList
 }), (dispatch) => ({
+  // 商品数量添加
   add (id) {
     dispatch(update({
       id:id,
       num:1
     }))
   },
+  // 商品数量减少
   update (id, num) {
     if(num<2){
       Taro.showToast({
@@ -27,6 +29,15 @@ import './index.less'
         num:-1
       }))
     }
+  },
+  // 商品选中状态修改
+  updateCheck (e){
+    const val = e.detail.value;
+    // 选中
+    if(val && val.length>0){
+    
+    }
+    // 选不中
   }
 }))
 class Index extends Component {
@@ -61,7 +72,11 @@ class Index extends Component {
   }
   // 选择商品下单
   checkGood(e){
-    console.log(e.detail,'============000000000000')
+    const selectId = e.detail.value[0];
+    if(selectId){
+    
+    }
+    console.log(e,'============000000000000')
   }
   render () {
     return (
@@ -73,11 +88,11 @@ class Index extends Component {
             {
               this.props.cartList.map((item)=>
                 <View className="cart-item">
-                  <checkbox-group onChange={this.checkGood}  name="checkGoods">
-                    <Label className='checkbox-list__label'>
-                      <Checkbox className='checkbox-list__checkbox' color="orange" value={item.id}></Checkbox>
+                  <CheckboxGroup onChange={this.checkGood}  name="checkGoods">
+                    <Label>
+                      <Checkbox color="orange" data-id={item.id} value={item.id}></Checkbox>
                     </Label>
-                  </checkbox-group>
+                  </CheckboxGroup>
                   <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
                     <Image src={item.skuImage} mode="widthFix" />
                   </View>

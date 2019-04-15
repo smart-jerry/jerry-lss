@@ -26,3 +26,9 @@ export const update = (action) => {
   }
 }
 
+export const updateCheck = (action)=>{
+  return {
+    type: 'UPDATE_CART_CHECK',
+    id:action.id
+  }
+}
