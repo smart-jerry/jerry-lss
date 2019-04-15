@@ -73,11 +73,11 @@ class Index extends Component {
             {
               this.props.cartList.map((item)=>
                 <View className="cart-item">
-                  <View onClick={this.checkGood.bind(this, item)}>
+                  <checkbox-group onChange={this.checkGood}  name="checkGoods">
                     <Label className='checkbox-list__label'>
-                      <Checkbox className='checkbox-list__checkbox' onChange={this.checkGood} color="orange" value={item.id}></Checkbox>
+                      <Checkbox className='checkbox-list__checkbox' color="orange" value={item.id}></Checkbox>
                     </Label>
-                  </View>
+                  </checkbox-group>
                   <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
                     <Image src={item.skuImage} mode="widthFix" />
                   </View>
