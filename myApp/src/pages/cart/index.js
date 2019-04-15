@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Checkbox, Label, Image } from '@tarojs/components'
+import { View, Text, Checkbox, Label, Image, Radio } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import './index.less'
@@ -41,6 +41,25 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+  /*跳转-商品详情*/
+  gotoDedail(id){
+    Taro.navigateTo({
+      url: '/pages/detail/index?id='+id
+    })
+  }
+  // 选择商品下单
+  checkGood(e){
+    console.log(e.detail,'============000000000000')
+    
+    /*const item = [];
+    this.setState({
+      checkList:[...this.state.checkList,{
+        id:item.id,
+        price:item.price,
+        num:item.num
+      }]
+    })*/
+  }
   render () {
     return (
       <View className='cart-box'>
@@ -51,20 +70,22 @@ class Index extends Component {
             {
               this.props.cartList.map((item)=>
                 <View className="cart-item">
-                  <Label className='checkbox-list__label'>
-                    <Checkbox className='checkbox-list__checkbox'> </Checkbox>
-                  </Label>
-                  <View className="img">
+                  <View onClick={this.checkGood.bind(this, item)}>
+                    <Label className='checkbox-list__label'>
+                      <Checkbox className='checkbox-list__checkbox' onChange={this.checkGood} color="orange" value={item.id}></Checkbox>
+                    </Label>
+                  </View>
+                  <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
                     <Image src={item.skuImage} mode="widthFix" />
                   </View>
                   <View className="other">
-                    <View class="title">{item.title}</View>
+                    <View class="title" onClick={this.gotoDedail.bind(this, item.id)}>{item.title}</View>
                     <View class="sku">sku sku sku sku</View>
                     <View class="operate-box">
-                      <View className="price">{item.price}</View>
+                      <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>{item.price}</View>
                       <View className="add-box">
                         <View className="add">-</View>
-                        <View className="count">1</View>
+                        <View className="count">{item.num}</View>
                         <View className="del">+</View>
                       </View>
                     </View>

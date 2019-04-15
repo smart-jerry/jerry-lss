@@ -10,6 +10,7 @@ export const addCarts = (action) => {
     skuId:action.skuId,
     title:action.title,
     price:action.price,
-    skuImage:action.skuImage
+    skuImage:action.skuImage,
+    num:1
   }
 }
