@@ -1,20 +1,32 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Checkbox, Label, Image, Radio } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import {update} from '../../actions/carts/index'
 
 import './index.less'
 
 @connect(({ cartList }) => ({
   cartList
 }), (dispatch) => ({
-  add () {
-  
+  add (id) {
+    dispatch(update({
+      id:id,
+      num:1
+    }))
   },
-  dec () {
-  
-  },
-  asyncAdd () {
-  
+  update (id, num) {
+    if(num<2){
+      Taro.showToast({
+        'title':'受不了了，宝贝不能再减少了哦！',
+        'icon':'none',
+        'duration':1000
+      })
+    }else{
+      dispatch(update({
+        id:id,
+        num:-1
+      }))
+    }
   }
 }))
 class Index extends Component {
@@ -84,9 +96,9 @@ class Index extends Component {
                     <View class="operate-box">
                       <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>{item.price}</View>
                       <View className="add-box">
-                        <View className="add">-</View>
+                        <View className="add" onClick={this.props.update.bind(this, item.id, item.num)}>-</View>
                         <View className="count">{item.num}</View>
-                        <View className="del">+</View>
+                        <View className="update" onClick={this.props.add.bind(this, item.id)}>+</View>
                       </View>
                     </View>
                   </View>

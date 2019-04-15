@@ -22,6 +22,12 @@ const cartList = (state = [], action) => {
           num:action.num
         }]
       }
+    case 'UPDATE_CART_NUM':
+      return state.map(item =>
+        (item.id === action.id)
+          ? {...item, num: item.num + action.num}
+          : item
+      )
     default:
       return state;
   }
