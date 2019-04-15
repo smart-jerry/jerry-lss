@@ -36,8 +36,10 @@ class Index extends Component{
     navigationStyle:'custom'
   }
   componentWillMount(){
+    const routerParams = this.$router.params;
+    console.log(routerParams,'===========routerParams');
     this.detailList = {
-      'id':'111111',
+      'id':routerParams.id,
       'images':[goods,good2,goods],
       'title':'精品佛形吊坠',
       'iconText':'新品特惠',
