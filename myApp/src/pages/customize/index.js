@@ -111,43 +111,56 @@ class Index extends Component{
     // 类目选择
     if(formData.typeSelect===''){
       Taro.showToast({
-        'title':'请选择宝贝类型！'
+        'title':'请选择宝贝类型！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
     }
     // 耳钉镶嵌材质
     if(formData.typeSelect.toString() === '3' &&(!formData.earQuality || formData.earQuality==='')){
       Taro.showToast({
-        'title':'请选择耳钉的镶嵌材质！'
+        'title':'请选择耳钉的镶嵌材质！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
     }
     // 戒指镶嵌材质
     if(formData.typeSelect.toString() === '0' && (!formData.rangQuality || formData.rangQuality === '')){
       Taro.showToast({
-        'title':'请选择戒指的镶嵌材质！'
+        'title':'请选择戒指的镶嵌材质！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
     }
     // 戒指封口类型
     if(formData.typeSelect.toString() === '0' && (!formData.rangType || formData.rangType === '')){
       Taro.showToast({
-        'title':'请选择戒指的封口类型！'
+        'title':'请选择戒指的封口类型！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
     }
     // 手指尺寸
     if(formData.typeSelect.toString() === '0' && (formData.rangType.toString() === '1' && (!formData.fingerSize || formData.fingerSize === ''))){
       Taro.showToast({
-        'title':'请输入手指尺寸！'
+        'title':'请输入手指尺寸！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
-    }else{
+    }
+    if(formData.typeSelect.toString() === '0' && (formData.rangType.toString() === '1' && (formData.fingerSize && formData.fingerSize !== ''))){
       // 数字格式校验
       let fingerSize = formData.fingerSize;
       if(isNaN(fingerSize)){
         Taro.showToast({
-          'title':'手指尺寸只能输入数字！'
+          'title':'手指尺寸只能输入数字！',
+          'icon':'none',
+          'duration':2000
         })
         return false;
       }
@@ -155,7 +168,9 @@ class Index extends Component{
     // 定制图样
     if(formData.imgList.length<1){
       Taro.showToast({
-        'title':'请上次定制的图样信息！'
+        'title':'请上次定制的图样信息！',
+        'icon':'none',
+        'duration':2000
       })
       return false;
     }
