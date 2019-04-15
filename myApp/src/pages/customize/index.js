@@ -185,8 +185,16 @@ class Index extends Component{
     formData['imgList'] = this.state.imgList
     console.log(formData);
     if(this.checkForm(formData)){
+      Taro.showLoading({
+        'title':'订单提交中...',
+        'mask':true
+      })
       // 数据提交
       console.log('form submit。。。');
+      
+      setTimeout(function () {
+        Taro.hideLoading()
+      },2000)
     }
   }
   render(){
