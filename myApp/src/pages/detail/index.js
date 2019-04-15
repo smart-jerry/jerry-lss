@@ -14,11 +14,14 @@ import './index.less';
 @connect(({ cartList }) => ({
   cartList
 }), (dispatch) => ({
-  addCart (id, skuId) {
+  addCart (detailList, skuId) {
     const option = {
       type:'ADD_CART',
-      id:id,
-      skuId:skuId
+      id:detailList.id,
+      skuId:skuId,
+      title:detailList.title,
+      price:detailList.sku[skuId].price,
+      skuImage:detailList.sku[skuId].skuImage
     }
     dispatch(addCarts(option))
   }
@@ -49,7 +52,7 @@ class Index extends Component{
         'inventory':1,
         'price':'￥6888',
         'oldPrice':'￥12888',
-        'skuImage':'',
+        'skuImage':goods,
         'weight':'3.6g',
         'size':'15*25',
         'detailImages':[goods,good2,goods,goods,goods,goods,goods]
@@ -58,7 +61,7 @@ class Index extends Component{
         'inventory':0,
         'price':'￥6888',
         'oldPrice':'￥12888',
-        'skuImage':'',
+        'skuImage':good2,
         'weight':'3.6g',
         'size':'15*25',
         'detailImages':[goods,good2,goods,goods,goods,goods,goods]
@@ -150,7 +153,7 @@ class Index extends Component{
             <Image className="icon" src="../../statics/images/liveChat.svg" mode="aspectFit" />
             <Text>客服</Text>
           </View>
-          <View className="btn-add" onClick={this.props.addCart.bind(this,this.detailList.id,this.state.selectSku)}>加入购物车</View>
+          <View className="btn-add" onClick={this.props.addCart.bind(this,this.detailList,this.state.selectSku)}>加入购物车</View>
         </View>
       </View>
     )

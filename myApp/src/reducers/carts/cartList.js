@@ -8,7 +8,10 @@ const cartList = (state = [], action) => {
         ...state,
         {
           id:action.id,
-          skuId:action.skuId
+          skuId:action.skuId,
+          title:action.title,
+          price:action.price,
+          skuImage:action.skuImage
         }
       ]
     default:

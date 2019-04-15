@@ -3,10 +3,13 @@
  */
 import Taro from '@tarojs/taro'
 
-export const addCarts = (option) => {
+export const addCarts = (action) => {
   return {
     type: 'ADD_CART',
-    id:option.id,
-    skuId:option.skuId
+    id:action.id,
+    skuId:action.skuId,
+    title:action.title,
+    price:action.price,
+    skuImage:action.skuImage
   }
 }
