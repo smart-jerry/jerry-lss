@@ -31,13 +31,10 @@ import './index.less'
     }
   },
   // 商品选中状态修改
-  updateCheck (e){
-    const val = e.detail.value;
-    // 选中
-    if(val && val.length>0){
-    
-    }
-    // 选不中
+  updateCheck (id){
+    dispatch(updateCheck({
+      id:id
+    }))
   }
 }))
 class Index extends Component {
@@ -70,14 +67,6 @@ class Index extends Component {
       url: '/pages/detail/index?id='+id
     })
   }
-  // 选择商品下单
-  checkGood(e){
-    const selectId = e.detail.value[0];
-    if(selectId){
-    
-    }
-    console.log(e,'============000000000000')
-  }
   render () {
     return (
       <View className='cart-box'>
@@ -88,11 +77,11 @@ class Index extends Component {
             {
               this.props.cartList.map((item)=>
                 <View className="cart-item">
-                  <CheckboxGroup onChange={this.checkGood}  name="checkGoods">
+                  <View onClick={this.props.updateCheck.bind(this, item.id)}>
                     <Label>
-                      <Checkbox color="orange" data-id={item.id} value={item.id}></Checkbox>
+                      <Checkbox color="orange" data-id={item.id} checked={item.checked} value={item.id}></Checkbox>
                     </Label>
-                  </CheckboxGroup>
+                  </View>
                   <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
                     <Image src={item.skuImage} mode="widthFix" />
                   </View>
