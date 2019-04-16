@@ -23,7 +23,8 @@ import './index.less';
       title:detailList.title,
       price:detailList.sku[skuId].price,
       skuImage:detailList.sku[skuId].skuImage,
-      inventory:detailList.sku[skuId].inventory
+      inventory:detailList.sku[skuId].inventory,
+      goodStatus:detailList.sku[skuId].goodStatus
     }
     dispatch(addCarts(option))
   }
@@ -52,6 +53,7 @@ class Index extends Component{
       'sku':[{
         'skuId':2225,
         'inventory':3,
+        'goodStatus':1,
         'price':'6888',
         'oldPrice':'12888',
         'skuImage':goods,
@@ -61,6 +63,7 @@ class Index extends Component{
       },{
         'skuId':333,
         'inventory':0,
+        'goodStatus':2,
         'price':'6888',
         'oldPrice':'12888',
         'skuImage':good2,

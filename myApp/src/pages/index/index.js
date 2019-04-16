@@ -34,40 +34,41 @@ class Index extends Component {
   }
   
   componentWillMount(){
+    
     this.flashList = [
-      {'id':'1','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6},
-      {'id':'2','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1},
-      {'id':'3','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'4','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'5','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'6','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'7','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'8','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'9','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0}
+      {'id':'1','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
+      {'id':'2','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
+      {'id':'3','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'4','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'5','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'6','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'7','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'8','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'9','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
     ];
   
     this.newList = [
-      {'id':'10','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6},
-      {'id':'11','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1},
-      {'id':'12','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'13','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'14','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'15','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'16','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'17','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'18','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0}
+      {'id':'10','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
+      {'id':'11','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
+      {'id':'12','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'13','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'14','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'15','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'16','imgUrl':good2,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'17','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'18','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
     ];
   
     this.recommendList = [
-      {'id':'19','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6},
-      {'id':'20','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1},
-      {'id':'21','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'22','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'23','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'24','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'25','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0},
-      {'id':'26','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2},
-      {'id':'27','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0}
+      {'id':'19','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
+      {'id':'20','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
+      {'id':'21','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'22','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'23','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'24','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'25','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+      {'id':'26','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+      {'id':'27','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
     ];
     
   }
