@@ -124,6 +124,12 @@ class Index extends Component {
     }
     console.log(inputVal,'=======inputVal')
   }
+  // 结算--去结算页面
+  gotoCheck(){
+    Taro.navigateTo({
+      url:'/pages/checkout/index?totalNum='+this.state.totalNum+'&totalPrice='+this.state.totalPrice
+    })
+  }
   render () {
     return (
       <View className='cart-box'>
@@ -172,7 +178,7 @@ class Index extends Component {
           </CheckboxGroup>
           <View className="total">
             <View>合计： <Text>￥{this.state.totalPrice}</Text></View>
-            <View className="order-btn">结算({this.state.totalNum})</View>
+            <View className="order-btn" onClick={this.gotoCheck}>结算({this.state.totalNum})</View>
           </View>
         </View>
       </View>
