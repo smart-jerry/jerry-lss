@@ -64,6 +64,7 @@ class Index extends Component{
   }
   render(){
     return (
+    <View className="checkout">
       <View className="checkout-box">
         {/*收货地址*/}
         <View className="address-box">
@@ -90,7 +91,7 @@ class Index extends Component{
                   <View className="num">X {item.num}</View>
                 </View>
               </View>
-              :''
+                :''
             )
           }
           <View className="order-info">
@@ -100,13 +101,15 @@ class Index extends Component{
             </View>
           </View>
         </View>
-        {/*下单-底部浮动*/}
-        <View className="order-box">
-          <View className="num">共{this.state.totalNum} 件,</View>
-          <View className="totalPrice">合计：<Text>￥{this.state.totalPrice}</Text></View>
-          <View className="order-btn" onClick={this.order}>提交订单</View>
-        </View>
       </View>
+      {/*下单-底部浮动*/}
+      <View className="order-box">
+        <View className="num">共{this.state.totalNum} 件,</View>
+        <View className="totalPrice">合计：<Text>￥{this.state.totalPrice}</Text></View>
+        <View className="order-btn" onClick={this.order}>提交订单</View>
+      </View>
+    </View>
+    
     )
   }
 }

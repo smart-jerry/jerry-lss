@@ -1,98 +1,102 @@
-.checkout-box{
-  background: #f2f2f2;
+.checkout{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-size: 28px;
-  box-sizing: border-box;
-  height: 100vh;
-  padding-top: 30px;
-  // 收货地址
-  .address-box{
-    margin:0 30px;
-    border-radius: 20px;
-    background: #ffffff;
-    padding: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    .address-icon{
-      width: 50px;
-      height: 50px;
-      image{
-        width: 50px;
-        height: auto;
-      }
-    }
-    .address-info{
-      padding: 0 30px;
-      flex-grow: 1;
+  background: #f2f2f2;
+  .checkout-box{
+    box-sizing: border-box;
+    padding-top: 30px;
+    // 收货地址
+    .address-box{
+      margin:0 30px;
+      border-radius: 20px;
+      background: #ffffff;
+      padding: 30px;
       display: flex;
-      flex-direction: column;
-      text{
-        margin-left: 20px;
-        font-size: 20px;
-        color: #999999;
-      }
-    }
-    .address-icon-right{
-      width: 50px;
-      height: 50px;
-      image{
+      justify-content: flex-start;
+      align-items: center;
+      .address-icon{
         width: 50px;
-        height: auto;
+        height: 50px;
+        image{
+          width: 50px;
+          height: auto;
+        }
       }
-    }
-  }
-  // 商品信息
-  .goodsList-box{
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 30px;
-    margin: 30px 30px 120px;
-    text{
-      font-size: 32px;
-      font-weight: bold;
-    }
-    .good-item{
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      margin-top: 30px;
-      image{
-        min-width: 180px;
-        width: 180px;
-      }
-      .title{
-        flex-grow: 1;
+      .address-info{
         padding: 0 30px;
-      }
-      .other{
-        width: 150px;
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        .price{
-
-        }
-        .num{
-          color: #999999;
+        text{
+          margin-left: 20px;
           font-size: 20px;
+          color: #999999;
+        }
+      }
+      .address-icon-right{
+        width: 50px;
+        height: 50px;
+        image{
+          width: 50px;
+          height: auto;
         }
       }
     }
-    .form-group{
-      padding-bottom: 30px;
-      /*输入标题*/
+    // 商品信息
+    .goodsList-box{
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px 30px 150px;
       text{
-        padding: 10px;
-        display: block;
-        font-size: 28px;
-        font-weight: normal;
+        font-size: 32px;
+        font-weight: bold;
       }
-      /*输入框*/
-      input{
-        border: 1px solid #d5d5d5;
-        margin-top: 10px;
-        padding:10px;
+      .good-item{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 30px;
+        image{
+          min-width: 180px;
+          width: 180px;
+        }
+        .title{
+          flex-grow: 1;
+          padding: 0 30px;
+        }
+        .other{
+          width: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          .price{
+
+          }
+          .num{
+            color: #999999;
+            font-size: 20px;
+          }
+        }
+      }
+      .form-group{
+        padding-bottom: 30px;
+        /*输入标题*/
+        text{
+          padding: 10px;
+          display: block;
+          font-size: 28px;
+          font-weight: normal;
+        }
+        /*输入框*/
+        input{
+          border: 1px solid #d5d5d5;
+          margin-top: 10px;
+          padding:10px;
+        }
       }
     }
   }
@@ -104,6 +108,7 @@
     display: flex;
     justify-content: flex-end;
     background: #ffffff;
+    z-index: 2;
     align-items: center;
     padding: 30px;
     box-sizing: border-box;
@@ -128,3 +133,5 @@
     }
   }
 }
+
+
