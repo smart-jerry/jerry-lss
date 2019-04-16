@@ -26,7 +26,11 @@ class Index extends Component{
     }
   }
   config = {
-    navigationBarTitleText: '确认订单'
+    navigationBarTitleText: '确认订单',
+    navigationBarBackgroundColor: '#f2f2f2',
+    backgroundTextStyle:'dark',
+    backgroundColorTop:'#f2f2f2',
+    backgroundColor:'#f2f2f2'
   }
   componentWillMount () {
     this.addressList = {
