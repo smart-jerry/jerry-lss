@@ -48,8 +48,11 @@ class Index extends Component {
     super(props)
     console.log(props.cartList,'======================props.cartListprops.cartList')
     this.state={
+      // 商品勾选数量
       totalNum:0,
+      // 勾选商品的总金额
       totalPrice:0,
+      // 全选状态
       selectAllStatus:false
     }
   }
@@ -68,10 +71,8 @@ class Index extends Component {
   }
   
   componentWillMount () {
-    // 根据购物车信息，查询商品状态
-    
+  
   }
-
   componentDidShow () { }
 
   componentDidHide () { }
