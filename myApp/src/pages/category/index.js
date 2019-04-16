@@ -90,7 +90,7 @@ class Index extends Component {
                     <View className="title">{item.title}</View>
                     <View className="discount">{item.iconText}</View>
                     <View className="operate-box">
-                      <View className="price">{item.price}</View>
+                      <View className="price">￥{item.price}</View>
                       <View className="add">+</View>
                     </View>
                   </View>

@@ -8,6 +8,7 @@ import { connect } from '@tarojs/redux';
 import {addCarts} from '../../actions/carts/index';
 import goods from '../../statics/goods/good1.jpg'
 import good2 from '../../statics/goods/good2.jpg'
+import liveChat from '../../statics/images/liveChat.svg'
 
 import './index.less';
 
@@ -50,8 +51,8 @@ class Index extends Component{
       'sku':[{
         'skuId':2225,
         'inventory':1,
-        'price':'￥6888',
-        'oldPrice':'￥12888',
+        'price':'6888',
+        'oldPrice':'12888',
         'skuImage':goods,
         'weight':'3.6g',
         'size':'15*25',
@@ -59,8 +60,8 @@ class Index extends Component{
       },{
         'skuId':333,
         'inventory':0,
-        'price':'￥6888',
-        'oldPrice':'￥12888',
+        'price':'6888',
+        'oldPrice':'12888',
         'skuImage':good2,
         'weight':'3.6g',
         'size':'15*25',
@@ -111,10 +112,10 @@ class Index extends Component{
         </View>
         {/*价格*/}
         <View className="price-box">
-          <View className="price">{this.detailList.sku[0].price}</View>
+          <View className="price">￥{this.detailList.sku[0].price}</View>
           <View className="mark">{this.detailList.iconText}</View>
         </View>
-        <View className="old-price">价格：<del>{this.detailList.sku[0].oldPrice}</del></View>
+        <View className="old-price">价格：<del>￥{this.detailList.sku[0].oldPrice}</del></View>
         <View className="title">{this.detailList.title}</View>
         {/*介绍*/}
         <View className="info mt30">
@@ -150,7 +151,7 @@ class Index extends Component{
             <View className="cart-num">{this.props.cartList.length}</View>
           </View>
           <View className="live-chat" onClick={this.gotoliveChat.bind(this)}>
-            <Image className="icon" src="../../statics/images/liveChat.svg" mode="aspectFit" />
+            <Image className="icon" src={liveChat} mode="aspectFit" />
             <Text>客服</Text>
           </View>
           <View className="btn-add" onClick={this.props.addCart.bind(this,this.detailList,this.state.selectSku)}>加入购物车</View>

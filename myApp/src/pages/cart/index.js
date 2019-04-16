@@ -41,7 +41,8 @@ class Index extends Component {
   constructor (props){
     super(props)
     this.state={
-      checkList:[]
+      totalNum:0,
+      totalPrice:0
     }
   }
 
@@ -49,8 +50,13 @@ class Index extends Component {
     navigationBarTitleText: '购物车'
   }
 
+  // 监听props 数据变化
+  // 调用 this.setState 通常不会触发 componentWillReceiveProps。
   componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+    if(this.props.cartList !== nextProps.cartList){
+//      console.log('555555555555555==my componentWillReceiveProps==');
+      this.counterTotal(nextProps);
+    }
   }
   
   componentWillMount () {
@@ -65,6 +71,23 @@ class Index extends Component {
   gotoDedail(id){
     Taro.navigateTo({
       url: '/pages/detail/index?id='+id
+    })
+  }
+  // 计算勾选的总金额和商品数量
+  counterTotal(nextProps){
+    let totalPriceTemp = 0;
+    let totalNumTemp = 0;
+    if(nextProps && nextProps.cartList && nextProps.cartList.length>0){
+      nextProps.cartList.map((item)=>{
+        if(item.checked){
+          totalNumTemp += item.num;
+          totalPriceTemp = totalPriceTemp + parseFloat(item.price*item.num)
+        }
+      });
+    }
+    this.setState({
+      totalNum:totalNumTemp,
+      totalPrice:totalPriceTemp
     })
   }
   render () {
@@ -89,7 +112,7 @@ class Index extends Component {
                     <View class="title" onClick={this.gotoDedail.bind(this, item.id)}>{item.title}</View>
                     <View class="sku">sku sku sku sku</View>
                     <View class="operate-box">
-                      <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>{item.price}</View>
+                      <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>￥{item.price}</View>
                       <View className="add-box">
                         <View className="add" onClick={this.props.update.bind(this, item.id, item.num)}>-</View>
                         <View className="count">{item.num}</View>
@@ -112,8 +135,8 @@ class Index extends Component {
             <Checkbox className='checkbox-list__checkbox'>全选</Checkbox>
           </Label>
           <View className="total">
-            <View>合计： <Text>{checkList.totalPrice || 0}</Text></View>
-            <View className="order-btn">结算({checkList.num||0})</View>
+            <View>合计： <Text>￥{this.state.totalPrice}</Text></View>
+            <View className="order-btn">结算({this.state.totalNum})</View>
           </View>
         </View>
       </View>
