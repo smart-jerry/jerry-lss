@@ -25,10 +25,17 @@ export const update = (action) => {
     num:action.num
   }
 }
-
+// 修改某商品选中状态
 export const updateCheck = (action)=>{
   return {
     type: 'UPDATE_CART_CHECK',
     id:action.id
+  }
+}
+// 全选与否
+export const selectAll = (action)=>{
+  return {
+    type:'SELECT_ALL',
+    checked:action.checked
   }
 }

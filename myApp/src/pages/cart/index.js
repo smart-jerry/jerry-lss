@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Checkbox, Label, Image, CheckboxGroup } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import {update, updateCheck} from '../../actions/carts/index'
+import {update, updateCheck, selectAll} from '../../actions/carts/index'
 
 import './index.less'
 
@@ -34,6 +34,12 @@ import './index.less'
   updateCheck (id){
     dispatch(updateCheck({
       id:id
+    }))
+  },
+  // 全选与否
+  selectAll(checked){
+    dispatch(selectAll({
+      checked:checked
     }))
   }
 }))
@@ -90,6 +96,16 @@ class Index extends Component {
       totalPrice:totalPriceTemp
     })
   }
+  // 全选
+  selectAll(e){
+    let inputVal = e.detail.value;
+    if(inputVal && inputVal.length>0){
+      this.props.selectAll(true);
+    }else{
+      this.props.selectAll(false);
+    }
+    console.log(inputVal,'=======inputVal')
+  }
   render () {
     return (
       <View className='cart-box'>
@@ -101,7 +117,7 @@ class Index extends Component {
               this.props.cartList.map((item)=>
                 <View className="cart-item">
                   <View onClick={this.props.updateCheck.bind(this, item.id)}>
-                    <Label>
+                    <Label className="checkbox-list__label">
                       <Checkbox color="orange" data-id={item.id} checked={item.checked} value={item.id}></Checkbox>
                     </Label>
                   </View>
@@ -131,9 +147,11 @@ class Index extends Component {
         </View>
         {/*下单*/}
         <View className="order-box">
-          <Label className='checkbox-list__label'>
-            <Checkbox className='checkbox-list__checkbox'>全选</Checkbox>
-          </Label>
+          <CheckboxGroup onChange={this.selectAll} name="selectAll">
+            <Label className='checkbox-list__label'>
+              <Checkbox className='checkbox-list__checkbox' value="1" color="orange">全选</Checkbox>
+            </Label>
+          </CheckboxGroup>
           <View className="total">
             <View>合计： <Text>￥{this.state.totalPrice}</Text></View>
             <View className="order-btn">结算({this.state.totalNum})</View>

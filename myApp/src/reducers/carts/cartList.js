@@ -35,6 +35,12 @@ const cartList = (state = [], action) => {
         ? {...item, checked: !item.checked}
         :item
       )
+    case 'SELECT_ALL':
+      let newListTemp = [...state];
+      newListTemp.map((item)=>{
+        item.checked = action.checked
+      })
+      return [...newListTemp]
     default:
       return state;
   }
