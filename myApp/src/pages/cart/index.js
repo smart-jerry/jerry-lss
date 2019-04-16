@@ -151,43 +151,44 @@ class Index extends Component {
   }
   render () {
     return (
-      <View className='cart-box'>
-        <View className="cart-head"></View>
-        <View className="cart-box">
-          {/*购物车有库存商品列表*/}
-          <View className="cart-splice">
-            {
-              this.props.cartList.map((item)=>
-                <View className="cart-item">
-                  <View onClick={this.props.updateCheck.bind(this, item.id)}>
-                    <Label className="checkbox-list__label">
-                      <Checkbox color="orange" data-id={item.id} checked={item.checked} value={item.id}></Checkbox>
-                    </Label>
-                  </View>
-                  <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
-                    <Image src={item.skuImage} mode="widthFix" />
-                  </View>
-                  <View className="other">
-                    <View class="title" onClick={this.gotoDedail.bind(this, item.id)}>{item.title}</View>
-                    <View class="sku">sku sku sku sku</View>
-                    <View class="operate-box">
-                      <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>￥{item.price}</View>
-                      <View className="add-box">
-                        <View className="add" onClick={this.props.update.bind(this, item.id, item.num)}>-</View>
-                        <View className="count">{item.num}</View>
-                        <View className="update" onClick={this.props.add.bind(this, item.id, item.inventory, item.num)}>+</View>
+      <View className='cart'>
+        <View className="cart-contain">
+          <View className="cart-head"></View>
+          <View className="cart-box">
+            {/*购物车有库存商品列表*/}
+            <View className="cart-splice">
+              {
+                this.props.cartList.map((item)=>
+                  <View className="cart-item">
+                    <View onClick={this.props.updateCheck.bind(this, item.id)}>
+                      <Label className="checkbox-list__label">
+                        <Checkbox color="orange" data-id={item.id} checked={item.checked} value={item.id}></Checkbox>
+                      </Label>
+                    </View>
+                    <View className="img" onClick={this.gotoDedail.bind(this, item.id)}>
+                      <Image src={item.skuImage} mode="widthFix" />
+                    </View>
+                    <View className="other">
+                      <View class="title" onClick={this.gotoDedail.bind(this, item.id)}>{item.title}</View>
+                      <View class="sku">sku sku sku sku</View>
+                      <View class="operate-box">
+                        <View className="price" onClick={this.gotoDedail.bind(this, item.id)}>￥{item.price}</View>
+                        <View className="add-box">
+                          <View className="add" onClick={this.props.update.bind(this, item.id, item.num)}>-</View>
+                          <View className="count">{item.num}</View>
+                          <View className="update" onClick={this.props.add.bind(this, item.id, item.inventory, item.num)}>+</View>
+                        </View>
                       </View>
                     </View>
                   </View>
-                </View>
-              )
-            }
-          </View>
-          {/*失效、下架商品列表*/}
-          <View className="cart-splice">
-            <View>失效宝贝({this.props.cartList.length})件</View>
+                )
+              }
+            </View>
+            {/*失效、下架商品列表*/}
+  
           </View>
         </View>
+        
         {/*下单*/}
         <View className="order-box">
           <CheckboxGroup onChange={this.selectAll} name="selectAll">

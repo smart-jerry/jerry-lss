@@ -1,95 +1,97 @@
-.cart-box{
+.cart{
+  width: 100%;
+  height: 100%;/*此次若用%，头部将不能定位*/
+  overflow: hidden;
   font-size: 28px;
   background: #f2f2f2;
-  height: 100vh;
-  .cart-head{
-    height: 200px;
-    background: orange;
-  }
-  .cart-box{
-    position: relative;
-    top: -190px;
-    margin: 30px;
-    box-sizing: border-box;
-    background: transparent;
-    height: 100%;
-    padding-bottom: 80px;
-    .cart-splice{
-      border: 1px solid #ffffff;
-      border-radius: 20px;
-      background: #ffffff;
-      margin-bottom: 30px;
-      padding: 30px;
+  .cart-contain{
+    .cart-head{
+      height: 200px;
+      background: orange;
+    }
+    .cart-box{
+      position: relative;
+      top: -190px;
+      margin: 0 30px;
       box-sizing: border-box;
-      // 购物车商品-每项
-      .cart-item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      background: transparent;
+      .cart-splice{
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+        background: #ffffff;
         margin-bottom: 30px;
-        // 复选框
-        .checkbox-list__label{
-          margin-right: 20px;
-        }
-        // 图片
-        .img{
-          margin-right: 30px;
-          width: 160px;
-          image{
-            min-width: 160px;
-            width: 160px;
-          }
-        }
-        // 信息操作区
-        .other{
-          flex-grow: 1;
+        padding: 30px;
+        box-sizing: border-box;
+        // 购物车商品-每项
+        .cart-item{
           display: flex;
-          flex-direction: column;
           justify-content: center;
-          align-items: flex-start;
-          // 标题
-          .title{
-            color: #333333;
+          align-items: center;
+          margin-bottom: 30px;
+          // 复选框
+          .checkbox-list__label{
+            margin-right: 20px;
           }
-          // 价格、数量操作区
-          .operate-box{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            align-items: center;
-            margin-top: 15px;
-            // 价格
-            .price{
-              color: red;
+          // 图片
+          .img{
+            margin-right: 30px;
+            width: 160px;
+            image{
+              min-width: 160px;
+              width: 160px;
             }
-            // 数量
-            .add-box{
-              border: 1px solid #f2f2f2;
-              border-radius:2px;
-              height: 50px;
+          }
+          // 信息操作区
+          .other{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            // 标题
+            .title{
+              color: #333333;
+            }
+            // 价格、数量操作区
+            .operate-box{
               display: flex;
-              justify-content: center;
+              justify-content: space-between;
+              width: 100%;
               align-items: center;
-              .add{
-                border-right:1px solid #f2f2f2;
-                width: 50px;
-                height: 50px;
-                text-align: center;
-                line-height: 50px;
+              margin-top: 15px;
+              // 价格
+              .price{
+                color: red;
               }
-              .count{
-                border-right:1px solid #f2f2f2;
-                width: 100px;
+              // 数量
+              .add-box{
+                border: 1px solid #f2f2f2;
+                border-radius:2px;
                 height: 50px;
-                text-align: center;
-                line-height: 50px;
-              }
-              .update{
-                width: 50px;
-                height: 50px;
-                text-align: center;
-                line-height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .add{
+                  border-right:1px solid #f2f2f2;
+                  width: 50px;
+                  height: 50px;
+                  text-align: center;
+                  line-height: 50px;
+                }
+                .count{
+                  border-right:1px solid #f2f2f2;
+                  width: 100px;
+                  height: 50px;
+                  text-align: center;
+                  line-height: 50px;
+                }
+                .update{
+                  width: 50px;
+                  height: 50px;
+                  text-align: center;
+                  line-height: 50px;
 
+                }
               }
             }
           }
@@ -99,13 +101,14 @@
   }
   .order-box{
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom:0;
+    height: 100px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     background: #ffffff;
     align-items: center;
-    padding: 10px 30px;
+    padding: 0 30px;
     box-sizing: border-box;
     .total{
       display: flex;
