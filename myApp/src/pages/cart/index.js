@@ -49,7 +49,8 @@ class Index extends Component {
     console.log(props.cartList,'======================props.cartListprops.cartList')
     this.state={
       totalNum:0,
-      totalPrice:0
+      totalPrice:0,
+      selectAllStatus:false
     }
   }
 
@@ -57,7 +58,7 @@ class Index extends Component {
     navigationBarTitleText: '购物车'
   }
 
-  // 监听props 数据变化
+  // 监听props 数据变化--计算总金额，全选框状态
   // 调用 this.setState 通常不会触发 componentWillReceiveProps。
   componentWillReceiveProps (nextProps) {
     if(this.props.cartList !== nextProps.cartList){
@@ -84,26 +85,41 @@ class Index extends Component {
   counterTotal(nextProps){
     let totalPriceTemp = 0;
     let totalNumTemp = 0;
+    let selectAllStatusTemp = true;// 默认全选
     if(nextProps && nextProps.cartList && nextProps.cartList.length>0){
       nextProps.cartList.map((item)=>{
         if(item && item.checked){
           totalNumTemp += item.num;
           totalPriceTemp = totalPriceTemp + parseFloat(item.price*item.num)
+        }else if(!item.checked){
+          // 未选中
+          selectAllStatusTemp = false;
         }
       });
     }
     this.setState({
       totalNum:totalNumTemp,
-      totalPrice:totalPriceTemp
+      totalPrice:totalPriceTemp,
+      selectAllStatus:selectAllStatusTemp
     })
   }
   // 全选
   selectAll(e){
     let inputVal = e.detail.value;
     if(inputVal && inputVal.length>0){
+      // 通知reducer更新数据
       this.props.selectAll(true);
+      // 全选框状态
+      this.setState({
+        selectAllStatus:true
+      })
     }else{
+      // 通知reducer更新数据
       this.props.selectAll(false);
+      // 全选框状态
+      this.setState({
+        selectAllStatus:false
+      })
     }
     console.log(inputVal,'=======inputVal')
   }
@@ -150,7 +166,7 @@ class Index extends Component {
         <View className="order-box">
           <CheckboxGroup onChange={this.selectAll} name="selectAll">
             <Label className='checkbox-list__label'>
-              <Checkbox className='checkbox-list__checkbox' value="1" color="orange">全选</Checkbox>
+              <Checkbox className='checkbox-list__checkbox' checked={this.state.selectAllStatus} value="1" color="orange">全选</Checkbox>
             </Label>
           </CheckboxGroup>
           <View className="total">
