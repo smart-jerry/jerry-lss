@@ -36,7 +36,7 @@ class App extends Component {
       navigationBarBackgroundColor: '#ffa500',
       backgroundTextStyle:'dark',
       backgroundColorTop:'#ffa500',
-      backgroundColor:'#ffa500'
+      backgroundColor:'#f2f2f2'
     },
     'tabBar' : {
       'color'           : '#7A7E83',
