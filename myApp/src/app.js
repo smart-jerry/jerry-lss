@@ -28,7 +28,7 @@ class App extends Component {
       'pages/customize/index',
       'pages/search/index',
       'pages/detail/index',
-      'pages/checkout/index'
+      'pages/checkout/index',
     ],
     window: {
       navigationBarTextStyle: 'black',

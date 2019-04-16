@@ -47,7 +47,7 @@ class Index extends Component{
     this.detailList = {
       'id':routerParams.id,
       'images':[goods,good2,goods],
-      'title':'精品佛形吊坠',
+      'title':'精品佛形吊坠 绿松石还是个吸收和隔离辐射的好东西 绿松石还是个吸收和隔离辐射的好东西',
       'iconText':'新品特惠',
       'specification':'卖家特殊说明',
       'sku':[{
