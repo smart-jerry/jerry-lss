@@ -126,10 +126,16 @@ class Index extends Component {
   }
   // 结算--去结算页面
   gotoCheck(){
-    // 判断勾选商品是否均有库存
-    
     // 判断是否勾选了商品
-    
+    if(this.state.totalNum<1 || this.state.totalPrice<1){
+      Taro.showToast({
+        'title':'你还没有选择宝贝哦！',
+        'icon':'none',
+        'duration':2000
+      })
+      return false;
+    }
+    // 判断勾选商品是否均有库存
     Taro.navigateTo({
       url:'/pages/checkout/index?totalNum='+this.state.totalNum+'&totalPrice='+this.state.totalPrice
     })
