@@ -19,6 +19,7 @@ const cartList = (state = [], action) => {
           title:action.title,
           price:action.price,
           skuImage:action.skuImage,
+          inventory:action.inventory,
           num:action.num,
           checked:action.checked
         }]

@@ -22,7 +22,8 @@ import './index.less';
       skuId:skuId,
       title:detailList.title,
       price:detailList.sku[skuId].price,
-      skuImage:detailList.sku[skuId].skuImage
+      skuImage:detailList.sku[skuId].skuImage,
+      inventory:detailList.sku[skuId].inventory
     }
     dispatch(addCarts(option))
   }
@@ -50,7 +51,7 @@ class Index extends Component{
       'specification':'卖家特殊说明',
       'sku':[{
         'skuId':2225,
-        'inventory':1,
+        'inventory':3,
         'price':'6888',
         'oldPrice':'12888',
         'skuImage':goods,

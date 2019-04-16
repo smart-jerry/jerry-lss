@@ -9,7 +9,16 @@ import './index.less'
   cartList
 }), (dispatch) => ({
   // 商品数量添加
-  add (id) {
+  add (id, inventory, num) {
+    const temnum = num+1;
+    if( temnum > inventory){
+      Taro.showToast({
+        'title':'宝贝共'+inventory+'件，没有更多了！',
+        'icon':'none',
+        'duration':1000
+      })
+      return false;
+    }
     dispatch(update({
       id:id,
       num:1
@@ -23,12 +32,12 @@ import './index.less'
         'icon':'none',
         'duration':1000
       })
-    }else{
-      dispatch(update({
-        id:id,
-        num:-1
-      }))
+      return false;
     }
+    dispatch(update({
+      id:id,
+      num:-1
+    }))
   },
   // 商品选中状态修改
   updateCheck (id){
@@ -166,7 +175,7 @@ class Index extends Component {
                       <View className="add-box">
                         <View className="add" onClick={this.props.update.bind(this, item.id, item.num)}>-</View>
                         <View className="count">{item.num}</View>
-                        <View className="update" onClick={this.props.add.bind(this, item.id)}>+</View>
+                        <View className="update" onClick={this.props.add.bind(this, item.id, item.inventory, item.num)}>+</View>
                       </View>
                     </View>
                   </View>
