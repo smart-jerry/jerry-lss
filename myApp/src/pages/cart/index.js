@@ -46,6 +46,7 @@ import './index.less'
 class Index extends Component {
   constructor (props){
     super(props)
+    console.log(props.cartList,'======================props.cartListprops.cartList')
     this.state={
       totalNum:0,
       totalPrice:0
@@ -85,7 +86,7 @@ class Index extends Component {
     let totalNumTemp = 0;
     if(nextProps && nextProps.cartList && nextProps.cartList.length>0){
       nextProps.cartList.map((item)=>{
-        if(item.checked){
+        if(item && item.checked){
           totalNumTemp += item.num;
           totalPriceTemp = totalPriceTemp + parseFloat(item.price*item.num)
         }
