@@ -6,7 +6,8 @@ import {View, Image, Text, Input} from '@tarojs/components';
 import {connect} from '@tarojs/redux';
 import './index.less'
 
-import addressIcon from '../../statics/images/liveChat.svg'
+import forward from '../../statics/images/forward.png';
+import position from '../../statics/images/positioning.png';
 
 @connect(({cartList}) => ({
   cartList
@@ -78,13 +79,13 @@ class Index extends Component{
       <View className="checkout-box">
         {/*收货地址*/}
         <View className="address-box">
-          <View className="address-icon"><Image src={addressIcon} mode="widthFix" /></View>
+          <View className="address-icon"><Image src={position} mode="widthFix" /></View>
           <View className="address-info">
             <View>{this.state.addressList.userName} <Text>{this.state.addressList.telNumber}</Text></View>
             <View>{this.state.addressList.provinceName}{this.state.addressList.cityName} {this.state.addressList.countyName}{this.state.addressList.detailInfo}</View>
             <View>{this.state.addressList.postalCode}</View>
           </View>
-          <View className="address-icon-right"><Image src={addressIcon} mode="widthFix" /></View>
+          <View className="address-icon-right"><Image src={forward} mode="widthFix" /></View>
         </View>
         {/*商品信息*/}
         <View className="goodsList-box">
