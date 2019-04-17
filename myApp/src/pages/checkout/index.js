@@ -22,7 +22,9 @@ class Index extends Component{
       // 商品勾选数量
       totalNum:0,
       // 勾选商品的总金额
-      totalPrice:0
+      totalPrice:0,
+      // 收货地址
+      addressList:{}
     }
   }
   config = {
@@ -33,11 +35,19 @@ class Index extends Component{
     backgroundColor:'#f2f2f2'
   }
   componentWillMount () {
-    this.addressList = {
-      name:'jerry',
-      tel:'1255856458',
-      addressInfo:'dsfsd s df  ds f sd f   df'
-    }
+    let _this = this;
+    //  收货地址
+    Taro.chooseAddress({
+      success:function (res) {
+        _this.addressList = res
+        _this.setState({
+          addressList:res
+        })
+        console.log(_this.state.addressList);
+      }
+    })
+    
+    // 结算
     this.counterTotal();
   }
   // 计算勾选的总金额和商品数量
@@ -70,8 +80,9 @@ class Index extends Component{
         <View className="address-box">
           <View className="address-icon"><Image src={addressIcon} mode="widthFix" /></View>
           <View className="address-info">
-            <View>{this.addressList.name} <Text>{this.addressList.tel}</Text></View>
-            <View>{this.addressList.addressInfo}</View>
+            <View>{this.state.addressList.userName} <Text>{this.state.addressList.telNumber}</Text></View>
+            <View>{this.state.addressList.provinceName}{this.state.addressList.cityName} {this.state.addressList.countyName}{this.state.addressList.detailInfo}</View>
+            <View>{this.state.addressList.postalCode}</View>
           </View>
           <View className="address-icon-right"><Image src={addressIcon} mode="widthFix" /></View>
         </View>
