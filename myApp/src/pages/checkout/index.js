@@ -71,7 +71,30 @@ class Index extends Component{
   }
   // 下单
   order(){
-  
+    Taro.showLoading({
+      'title':'订单提交中...',
+      'mask':true
+    })
+    // 数据提交
+    console.log('form submit。。。');
+    Taro.requestPayment({
+      timeStamp: new Date().getTime().toString(),
+      nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
+      package: 'prepay_id=wx2017033010242291fcfe0db70013231072',
+      signType: 'MD5',
+      paySign: '22D9B4E54AB1950F51E0649E8810ACD6',
+      success(res) {
+        console.log(res,'==========success');
+      },
+      fail(res) {
+        console.log(res,'==========fail');
+      }
+    })
+    
+    // 提交成功，跳转到支付页面
+    setTimeout(function () {
+      Taro.hideLoading()
+    },2000)
   }
   render(){
     return (

@@ -54,7 +54,7 @@ class Index extends Component{
         'skuId':2225,
         'inventory':3,
         'goodStatus':1,
-        'price':'6888',
+        'price':'0.01',
         'oldPrice':'12888',
         'skuImage':goods,
         'weight':'3.6g',
