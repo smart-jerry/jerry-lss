@@ -27,6 +27,11 @@ import './index.less';
       goodStatus:detailList.sku[skuId].goodStatus
     }
     dispatch(addCarts(option))
+    Taro.showToast({
+      'title':'加购成功！',
+      'icon':'none',
+      'duration':1000
+    })
   }
 }))
 
@@ -34,12 +39,21 @@ class Index extends Component{
   constructor (props){
     super(props);
     this.state={
-      selectSku:0
+      // 加购商品的sku
+      selectSku:0,
+      // 购物车商品数量
+      totalNum:0
     }
   }
   config = {
     navigationBarTitleText: '详情页',
     navigationStyle:'custom'
+  }
+  componentWillReceiveProps (nextProps) {
+    if(this.props.cartList !== nextProps.cartList){
+      //      console.log('555555555555555==my componentWillReceiveProps==');
+      this.counterTotal(nextProps);
+    }
   }
   componentWillMount(){
     const routerParams = this.$router.params;
@@ -72,6 +86,22 @@ class Index extends Component{
         'detailImages':[goods,good2,goods,goods,goods,goods,goods]
       }]
     }
+    // 初始化计算购物车商品数量
+    this.counterTotal(this.props);
+  }
+  // 计算勾选的总金额和商品数量
+  counterTotal(nextProps){
+    let totalNumTemp = 0;
+    if(nextProps && nextProps.cartList && nextProps.cartList.length>0){
+      nextProps.cartList.map((item)=>{
+        if(item){
+          totalNumTemp += item.num;
+        }
+      });
+    }
+    this.setState({
+      totalNum:totalNumTemp
+    })
   }
   /*购物车*/
   gotoCart(){
@@ -152,7 +182,7 @@ class Index extends Component{
           <View className="carts" onClick={this.gotoCart.bind(this)}>
             <Image className="icon" src="../../statics/images/cart.png" mode="aspectFit" />
             <Text>购物车</Text>
-            <View className="cart-num">{this.props.cartList.length}</View>
+            <View className="cart-num">{this.state.totalNum}</View>
           </View>
           <View className="live-chat" onClick={this.gotoliveChat.bind(this)}>
             <Image className="icon" src={liveChat} mode="aspectFit" />

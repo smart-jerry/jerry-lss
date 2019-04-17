@@ -109,7 +109,7 @@ class Index extends Component {
     }
     this.setState({
       totalNum:totalNumTemp,
-      totalPrice:totalPriceTemp,
+      totalPrice:totalPriceTemp.toFixed(2),
       selectAllStatus:selectAllStatusTemp
     })
   }
