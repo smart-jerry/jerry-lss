@@ -112,7 +112,7 @@ class Index extends Component{
   /*客服*/
   gotoliveChat(){
     Taro.navigateTo({
-      url:'/pages/customize/index'
+      url:'/pages/helpCenter/index'
     })
   }
   /*返回*/

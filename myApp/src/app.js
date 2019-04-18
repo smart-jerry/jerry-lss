@@ -29,6 +29,7 @@ class App extends Component {
       'pages/search/index',
       'pages/detail/index',
       'pages/checkout/index',
+      'pages/helpCenter/index'
     ],
     window: {
       navigationBarTextStyle: 'black',
