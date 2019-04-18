@@ -3,7 +3,7 @@
  */
 
 import Taro, {Component} from '@tarojs/taro'
-import {View, Image, Text} from '@tarojs/components';
+import {View, Image, Text, Swiper, SwiperItem} from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import {addCarts} from '../../actions/carts/index';
 import goods from '../../statics/goods/good1.jpg'

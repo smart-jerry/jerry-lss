@@ -7,6 +7,8 @@ import {View, ScrollView, Image} from '@tarojs/components';
 import positioning from '../../statics/images/forward.png'
 import my from '../../statics/images/liveChat.svg'
 
+import './index.less'
+
 class Index extends Component{
   config = {
     navigationBarTitleText: '帮助中心'
@@ -229,14 +231,19 @@ class Index extends Component{
       }
     ]
   }
+  showQuestion(id){
+    const jquery = Taro.createSelectorQuery();
+    let listView = jquery.select('#questionBox'+id);
+    listView.style.display = 'none';
+  }
   render(){
     return (
       <View className="help-center">
         <ScrollView scrollY="true" scrollWithAnimation="true" className="help-box">
           {
-            this.helpList.map((item)=>
+            this.helpList.map((item, i)=>
             <View>
-              <View className="item-list">
+              <View className="item-list" onClick={this.showQuestion.bind(this, i)}>
                 <View className="item-info">
                   <View className="icon-mark"><Image src={my} mode="widthFix" /></View>
                   <View className="name">
@@ -246,7 +253,7 @@ class Index extends Component{
                 </View>
                 <View className="icon-operate"><Image src={positioning} mode="widthFix" /></View>
               </View>
-              <View className="question-box">
+              <View className="question-box" id={`questionBox${i}`}>
                 {item.questionList.map((question, index)=>
                   <View className="question-list">
                     <View>{index}, {question.title}</View>
