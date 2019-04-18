@@ -15,7 +15,10 @@ class Index extends Component{
   }
   render(){
     return(
-      <View onClick={this.gotoliveChat} className="customer-service">在线咨询</View>
+      <View onClick={this.gotoliveChat} className="customer-service">
+        <Text>在线</Text>
+        <Text>咨询</Text>
+      </View>
     )
   }
 }

@@ -7,49 +7,53 @@
   overflow: hidden;
   font-size: 28px;
   /*头部导航*/
- .header{
-   width: 100%;
-   background: orange;
-   box-sizing: border-box;
-   padding: 20px 30px;
-   display: flex;
-   align-items: center;
-   /*定制*/
-   .customize-box{
-     width: 40%;
-     .navigator{
-       -webkit-tap-highlight-color: transparent;
-     }
-     .navigator-hover{
-       color: blue;
-     }
-   }
-   /*搜索*/
-   .search-box{
-     border: 1px solid #ffffff;
-     background: #ffffff;
-     color: #333333;
-     padding: 10px;
-     box-sizing: border-box;
-     display: flex;
-     justify-content: flex-start;
-     align-items: center;
-     border-radius: 50px;
-     width: 60%;
-     overflow: hidden;
-     icon{
-       margin-right: 10px;
-       box-sizing: border-box;
-     }
-     .search{
-       display: inline-block;
-       box-sizing: border-box;
-       overflow: hidden;
-       font-size: 30px;
-       color: #999999;
-     }
-   }
- }
+  .header{
+    width: 100%;
+    background: orange;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .customize-box{
+      border: 1px solid #ffffff;
+      border-radius: 50px;
+      display: inline-block;
+      color: #ffffff;
+      padding: 10px 20px;
+      .navigator{
+        -webkit-tap-highlight-color: transparent;
+      }
+      .navigator-hover{
+        color: blue;
+      }
+    }
+    .search-box{
+      border: 1px solid #ffffff;
+      background: #ffffff;
+      color: #333333;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 50px;
+      max-width: 60%;
+      width: 60%;
+      overflow: hidden;
+      icon{
+        margin-right: 10px;
+        box-sizing: border-box;
+      }
+      .search{
+        display: inline-block;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 30px;
+        color: #999999;
+      }
+    }
+  }
   /*类目*/
   .category-body{
     box-sizing: border-box;
