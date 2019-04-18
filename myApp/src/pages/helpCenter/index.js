@@ -6,6 +6,9 @@ import Taro, {Component} from '@tarojs/taro';
 import {View, ScrollView} from '@tarojs/components';
 
 class Index extends Component{
+  config = {
+    navigationBarTitleText: '帮助中心'
+  }
   constructor (props){
     super(props)
     
