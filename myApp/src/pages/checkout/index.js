@@ -36,17 +36,8 @@ class Index extends Component{
     backgroundColor:'#f2f2f2'
   }
   componentWillMount () {
-    let _this = this;
     //  收货地址
-    Taro.chooseAddress({
-      success:function (res) {
-        _this.addressList = res
-        _this.setState({
-          addressList:res
-        })
-        console.log(_this.state.addressList);
-      }
-    })
+    this.chooseAddress();
     
     // 结算
     this.counterTotal();
@@ -96,6 +87,19 @@ class Index extends Component{
       Taro.hideLoading()
     },2000)
   }
+  //  收货地址
+  chooseAddress(){
+    let _this = this;
+    Taro.chooseAddress({
+      success:function (res) {
+        _this.addressList = res
+        _this.setState({
+          addressList:res
+        })
+        console.log(_this.state.addressList);
+      }
+    })
+  }
   render(){
     return (
     <View className="checkout">
@@ -108,7 +112,7 @@ class Index extends Component{
             <View>{this.state.addressList.provinceName}{this.state.addressList.cityName} {this.state.addressList.countyName}{this.state.addressList.detailInfo}</View>
             <View>{this.state.addressList.postalCode}</View>
           </View>
-          <View className="address-icon-right"><Image src={forward} mode="widthFix" /></View>
+          <View className="address-icon-right" onClick={this.chooseAddress}><Image src={forward} mode="widthFix" /></View>
         </View>
         {/*商品信息*/}
         <View className="goodsList-box">
