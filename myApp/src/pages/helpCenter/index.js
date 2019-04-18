@@ -3,7 +3,7 @@
  */
 
 import Taro, {Component} from '@tarojs/taro';
-import {View} from '@tarojs/components';
+import {View, ScrollView} from '@tarojs/components';
 
 class Index extends Component{
   constructor (props){
@@ -12,7 +12,15 @@ class Index extends Component{
   }
   render(){
     return (
-      <View>帮助中心</View>
+      <View className="help-center">
+        <ScrollView scrollY="true" scrollWithAnimation="true" className="help-box">
+          问题一览，问答方式
+        </ScrollView>
+        <View className="live-chat-box">
+          <View className="live-chat-btn">在线客服 <View className="mark">处理更快哦</View></View>
+          <View className="server-time">电话客服 2568945255 (服务时间：8:00 - 22:00)</View>
+        </View>
+      </View>
     )
   }
 }
