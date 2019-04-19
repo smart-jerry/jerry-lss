@@ -234,6 +234,7 @@ class Index extends Component{
   showQuestion(id){
     const jquery = Taro.createSelectorQuery();
     let listView = jquery.select('#questionBox'+id);
+    listView.addClass('bbbb');
     listView.style.display = 'none';
   }
   render(){
@@ -266,7 +267,7 @@ class Index extends Component{
         </ScrollView>
         <View className="live-chat-box">
           <View className="live-chat-btn">在线客服 <View className="mark">处理更快哦</View></View>
-          <View className="server-time">电话客服 2568945255 (服务时间：8:00 - 22:00)</View>
+          <View className="server-time">电话客服 12568945255 (服务时间：8:00 - 22:00)</View>
         </View>
       </View>
     )
