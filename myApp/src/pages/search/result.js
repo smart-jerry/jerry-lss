@@ -44,21 +44,7 @@ class Index extends Component{
   render(){
     return(
       <View className="search-box">
-        <View className="search-header">
-          <View className="input-box">
-            <Input type="text" value={this.state.searchKey} />
-            <Icon size='20' type='clear' color='grey' />
-          </View>
-          <Text>取消</Text>
-        </View>
-        <ScrollView scrollY="true" scrollWithAnimation="true" className="search-body">
-          {
-            this.searchList.map((item)=>
-              <View className="search-item" onClick={this.selectKey.bind(this,item)}>
-                {item.keyword}
-              </View>
-            )}
-        </ScrollView>
+        搜索结果页面
       </View>
     )
   }
