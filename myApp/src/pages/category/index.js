@@ -67,9 +67,9 @@ class Index extends Component {
             </navigator>
           </View>
           {/*搜索*/}
-          <View className="search-box">
+          <View className="search-box" onClick={this.goToSearch.bind(this)}>
             <Icon size='20' type='search' />
-            <View className="search" onClick={this.goToSearch.bind(this)}>请输入商品名称</View>
+            <View className="search">请输入商品名称</View>
           </View>
         </View>
         {/*类目*/}
