@@ -51,7 +51,7 @@ class Index extends Component {
   render () {
     return (
       <ScrollView scrollY="true" scrollWithAnimation="true" className="account-box">
-        <View className="header"></View>
+        <View className="header"> </View>
         <View className="account-body">
           <View className="account-info">
             <View className="account">

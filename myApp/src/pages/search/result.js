@@ -4,7 +4,7 @@
 
 import Taro, {Component} from '@tarojs/taro';
 import {View, Icon, Input, Text, ScrollView} from '@tarojs/components';
-import './index.less';
+import './result.less';
 
 class Index extends Component{
   constructor(props){
@@ -38,12 +38,9 @@ class Index extends Component{
       {id:1,'keyword':'dddddd'}
     ]
   }
-  selectKey(item){
-    console.log('into selectkey function。。。');
-  }
   render(){
     return(
-      <View className="search-box">
+      <View className="search-result-box">
         搜索结果页面
       </View>
     )

@@ -39,7 +39,13 @@ class Index extends Component{
     ]
   }
   selectKey(item){
+    Taro.navigateTo({
+      url:'/pages/search/result?keyWords='+encodeURIComponent(item.keyword)
+    })
     console.log('into selectkey function。。。');
+  }
+  searchComplete(){
+  
   }
   render(){
     return(
@@ -49,7 +55,7 @@ class Index extends Component{
             <Input type="text" value={this.state.searchKey} />
             <Icon size='20' type='clear' color='grey' />
           </View>
-          <Text>取消</Text>
+          <Text onClick={this.searchComplete.bind(this)}>取消</Text>
         </View>
         <ScrollView scrollY="true" scrollWithAnimation="true" className="search-body">
           {
