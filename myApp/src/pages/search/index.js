@@ -8,7 +8,30 @@ import './index.less';
 
 class Index extends Component{
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+      searchList:[
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'},
+        {id:1,'keyword':'dddddd'}
+      ]
+    }
   }
   config = {
     navigationBarTitleText: '搜索页',
@@ -16,46 +39,43 @@ class Index extends Component{
     backgroundColorTop:'#f2f2f2'
   }
   componentWillMount(){
-    this.searchList = [
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'},
-      {id:1,'keyword':'dddddd'}
-    ]
+  
   }
+  // 跳转搜索结果页
   selectKey(item){
     Taro.navigateTo({
       url:'/pages/search/result?keyWords='+encodeURIComponent(item.keyword)
     })
     console.log('into selectkey function。。。');
   }
-  searchComplete(){
-  
+  // 取消
+  searchCancel(){
+    Taro.navigateBack();
+  }
+  // 键盘输入
+  keyInput(e){
+    let input = e.detail;
+    let val = input.value;
+    // 发送请求 根据结果重置搜索结果
+    this.setState({
+      searchList:this.state.searchList.splice(0,this.state.searchList.length-3)
+    })
+  }
+  clearText(){
+    console.log('into clearTextclearTextclearTextclearText');
+    this.setState({
+      searchKey:' '
+    })
   }
   render(){
     return(
       <View className="search-box">
         <View className="search-header">
           <View className="input-box">
-            <Input type="text" value={this.state.searchKey} />
-            <Icon size='20' type='clear' color='grey' />
+            <Input type="text" value={this.state.searchKey} focus onInput={this.keyInput} onConfirm={this.keyInput} />
+            <View className="clear-box" onClick={this.clearText.bind(this)}><Icon size='20' type='clear' color='grey' /></View>
           </View>
-          <Text onClick={this.searchComplete.bind(this)}>取消</Text>
+          <Text onClick={this.searchCancel.bind(this)}>取消</Text>
         </View>
         <ScrollView scrollY="true" scrollWithAnimation="true" className="search-body">
           {

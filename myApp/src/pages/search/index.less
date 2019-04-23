@@ -22,15 +22,22 @@
       position: relative;
       margin-right: 20px;
       flex-grow: 1;
+      box-sizing: border-box;
       input{
         width: 100%;
-        padding: 15px 20px 15px;
+        padding: 30px;
+        box-sizing: border-box;
       }
-      icon{
+      .clear-box{
         position: absolute;
         right: 20px;
-        top: 50%;
-        margin-top: -20px;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
       }
     }
   }
