@@ -54,7 +54,12 @@ class Index extends Component {
       url: '/pages/search/index'
     })
   }
-  
+  /*跳转-商品详情*/
+  gotoDedail(id){
+    Taro.navigateTo({
+      url: '/pages/detail/index?id='+id
+    })
+  }
   render () {
     return (
       <View className='category-box'>
@@ -84,14 +89,14 @@ class Index extends Component {
           <ScrollView scrollY="true" scrollWithAnimation="true" onScrollToLower={this.nextpage} className="category-contain">
             {
               this.props.categoryList[this.state.selectIndex].catList.map((item,index)=>
-                <View className="contain-item">
+                <View className="contain-item" onClick={this.gotoDedail.bind(this,item.id)}>
                   <Image className="item-img" src={item.img} mode="widthFix" />
                   <View className="item-info">
                     <View className="title">{item.title}</View>
                     <View className="discount">{item.iconText}</View>
                     <View className="operate-box">
                       <View className="price">￥{item.price}</View>
-                      <View className="add">+</View>
+                      {/*<View className="add">+</View>*/}
                     </View>
                   </View>
                 </View>
