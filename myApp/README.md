@@ -70,6 +70,12 @@ taro就是用封装好的组件写代码，类似于elementui、bootstrap等
 
 ### 13，在线聊天？
 
+### 14, taro无法识别IntersectionObserver（√）
+微信本身有这个api：this.createIntersectionObserver([options]) 来代替\
+https://developers.weixin.qq.com/miniprogram/dev/api/wx.createIntersectionObserver.html
+
+用Taro.createIntersectionObserver();真心找不到api.....
+
 
 
 

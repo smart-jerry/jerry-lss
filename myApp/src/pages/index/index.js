@@ -59,23 +59,37 @@ class Index extends Component {
       {'id':'18','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
     ];
   
-    this.recommendList = [
-      {'id':'19','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
-      {'id':'20','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
-      {'id':'21','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
-      {'id':'22','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
-      {'id':'23','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
-      {'id':'24','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
-      {'id':'25','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
-      {'id':'26','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
-      {'id':'27','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
-    ];
+    this.setState({
+      recommendList:[
+        {'id':'19','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
+        {'id':'20','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
+        {'id':'21','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+        {'id':'22','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+        {'id':'23','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+        {'id':'24','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+        {'id':'25','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1},
+        {'id':'26','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+        {'id':'27','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':0,'goodStatus':1}
+      ]
+    })
     
   }
 
   componentWillUnmount () { }
-
-  componentDidShow () { }
+  
+  componentDidMount () {
+    // 上拉加载
+    this._observer = Taro.createIntersectionObserver();
+    this._observer.relativeTo('.index-body')
+    .observe('#next-page', (res) => {
+      console.log(res,'============res');
+      // next page元素出现
+      if(res && res.intersectionRatio && res.intersectionRatio > 0.1){
+        // 请求下一页
+        this.getNextPage();
+      }
+    })
+  }
 
   componentDidHide () { }
 
@@ -97,6 +111,18 @@ class Index extends Component {
       url: '/pages/detail/index?id='+id
     })
   }
+  // 下一页
+  getNextPage(){
+    console.log('next page。。。。。。。。。。。。5555555');
+    this.setState({
+      recommendList:this.state.recommendList.concat([
+        {'id':'19','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'5.6','inventory':6,'goodStatus':1},
+        {'id':'20','imgUrl':good2,'title':'nfo','price':'1288','oldPrice':'2000','inventory':1,'goodStatus':1},
+        {'id':'21','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1},
+        {'id':'22','imgUrl':goods,'title':'nfo','price':'2.6','oldPrice':'8868','inventory':2,'goodStatus':1}
+      ])
+    })
+  }
   render () {
     return (
       <View className='index'>
@@ -113,7 +139,7 @@ class Index extends Component {
           </View>
         </View>
         {/*body*/}
-        <ScrollView scrollY="true" scrollWithAnimation="true" className="index-body">
+        <View className="index-body">
           {/*限时秒杀*/}
           <View>
             <View className="module-title">限时秒杀</View>
@@ -161,7 +187,7 @@ class Index extends Component {
             <View className="module-title">为你推荐</View>
             <View className="recommend-box">
               {
-                this.recommendList.map((item)=>
+                this.state.recommendList.map((item)=>
                   <View className="item-box" onClick={this.gotoDedail.bind(this,item.id)}>
                     <View className="img-box">
                       <image src={item.imgUrl} mode="widthFix" />
@@ -175,10 +201,11 @@ class Index extends Component {
                 )
               }
             </View>
+            <div id="next-page" className="next-page"> 加载中... </div>
           </View>
           {/*demo*/}
           <Button onClick={this.gotoDemo.bind(this,'/pages/demo/index')}>跳转到demo</Button>
-        </ScrollView>
+        </View>
         {/*在线客服*/}
         <liveChat />
       </View>
