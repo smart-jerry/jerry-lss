@@ -142,7 +142,7 @@ class Index extends Component {
         <View className="index-body">
           {/*限时秒杀*/}
           <View>
-            <View className="module-title">限时秒杀</View>
+            <View className="module-title">------ 限时秒杀 ------</View>
             <View className="flash-sale-box">
               {
                 this.flashList.map((item)=>
@@ -163,7 +163,7 @@ class Index extends Component {
   
           {/*新品特惠*/}
           <View>
-            <View className="module-title">新品特惠</View>
+            <View className="module-title">------  新品特惠  ------</View>
             <View className="news-box">
               {
                 this.newList.map((item)=>
@@ -184,7 +184,7 @@ class Index extends Component {
   
           {/*为你推荐*/}
           <View>
-            <View className="module-title">为你推荐</View>
+            <View className="module-title">------  为你推荐  ------</View>
             <View className="recommend-box">
               {
                 this.state.recommendList.map((item)=>
