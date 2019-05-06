@@ -294,7 +294,6 @@ class Index extends Component{
             <Textarea className="more-info" name="moreInfo" placeholder="其他信息请在此备注" maxlength="260"  />
           </View>
           <View className="form-btn">
-            <Button className='btn-max-w mr30' form-type="reset" size="default" plain type='default'>重置</Button>
             <Button className='btn-max-w submit-btn' form-type="submit" size="default" plain type='default'>提交</Button>
           </View>
         </Form>
