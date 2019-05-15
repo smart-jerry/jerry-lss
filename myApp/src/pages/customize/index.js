@@ -5,6 +5,7 @@
 import Taro, {Component} from '@tarojs/taro';
 import {View, Form, Text, Input, RadioGroup, Label, Radio, Button, Image, Icon, Textarea} from '@tarojs/components';
 import './index.less';
+import http from '../../core/http.service';
 import myPhoto from '../../statics/images/photoIcon.png'
 
 class Index extends Component{
@@ -191,10 +192,16 @@ class Index extends Component{
       })
       // 数据提交
       console.log('form submit。。。');
+      http({
+        url:'http://h5app.jollychic.com/jolly-config.js'
+      }).then((res)=>{
+        console.log("cheng gong la");
+        console.log(res)
+        // 关闭tost弹框
+        Taro.hideLoading();
+      })
       
-      setTimeout(function () {
-        Taro.hideLoading()
-      },2000)
+      
     }
   }
   render(){

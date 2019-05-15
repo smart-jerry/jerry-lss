@@ -77,7 +77,9 @@ https://developers.weixin.qq.com/miniprogram/dev/api/wx.createIntersectionObserv
 用Taro.createIntersectionObserver();真心找不到api.....
 
 
-
+### 15, 请求发送 ,域名不合法
+因： 微信未绑卡，未能正常注册
+解决：开发者工具中, 设置-->项目设置--->不校验合法域名。忽略域名校验
 
 # 四，旅途
 1，环境搭建（√）\

@@ -5,6 +5,7 @@ import Taro,{Component} from '@tarojs/taro';
 import {View, Image, Text, Input} from '@tarojs/components';
 import {connect} from '@tarojs/redux';
 import './index.less'
+import http from '../../core/http.service';
 
 import forward from '../../statics/images/forward.png';
 import position from '../../statics/images/positioning.png';
@@ -67,25 +68,28 @@ class Index extends Component{
       'mask':true
     })
     // 数据提交
-    console.log('form submit。。。');
-    Taro.requestPayment({
-      timeStamp: new Date().getTime().toString(),
-      nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
-      package: 'prepay_id=wx2017033010242291fcfe0db70013231072',
-      signType: 'MD5',
-      paySign: '22D9B4E54AB1950F51E0649E8810ACD6',
-      success(res) {
-        console.log(res,'==========success');
-      },
-      fail(res) {
-        console.log(res,'==========fail');
-      }
+    http({
+      'url':'http://h5app.jollychic.com/host-config.js?v=1557812931_20310'
+    }).then((res)=>{
+      // 关闭下单成功弹框
+      Taro.hideLoading();
+      console.log(res);
+  
+      // 调用支付--支付下单
+      Taro.requestPayment({
+        timeStamp: new Date().getTime().toString(),
+        nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
+        package: 'prepay_id=wx2017033010242291fcfe0db70013231072',
+        signType: 'MD5',
+        paySign: '22D9B4E54AB1950F51E0649E8810ACD6',
+        success(res) {
+          console.log(res,'==========success');
+        },
+        fail(res) {
+          console.log(res,'==========fail');
+        }
+      })
     })
-    
-    // 提交成功，跳转到支付页面
-    setTimeout(function () {
-      Taro.hideLoading()
-    },2000)
   }
   //  收货地址
   chooseAddress(){
