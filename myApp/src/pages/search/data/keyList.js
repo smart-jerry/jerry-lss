@@ -15,7 +15,7 @@ const defaulVal = [
   {id:10,'keyword':'戒指，宝宝佛，高瓷蓝'},
   {id:11,'keyword':'戒指，宝宝佛，绿色'},
   {id:12,'keyword':'吊坠，宝宝佛，高瓷蓝'},
-  {id:13,'keyword':'戒指，佛戒，高瓷蓝'},
+  {id:13,'keyword':'戒指，宝宝'},
   {id:14,'keyword':'戒指，佛戒，高瓷蓝'},
   {id:15,'keyword':'戒指，佛戒，高瓷蓝'},
   {id:16,'keyword':'戒指，佛戒，高瓷蓝'},

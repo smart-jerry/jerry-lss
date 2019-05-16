@@ -11,7 +11,9 @@ class Index extends Component{
   constructor(props){
     super(props);
     this.state = {
-      searchList:[]
+      searchList:[],
+      showClear:false,
+      searchKey:''
     }
   }
   config = {
@@ -24,10 +26,10 @@ class Index extends Component{
   }
   // 跳转搜索结果页
   selectKey(item){
+    this.searchShow(item.keyword);
     Taro.navigateTo({
       url:'/pages/search/result?keyWords='+encodeURIComponent(item.keyword)
     })
-    console.log('into selectkey function。。。');
   }
   // 取消
   searchCancel(){
@@ -37,31 +39,56 @@ class Index extends Component{
   keyInput(e){
     let input = e.detail;
     let val = input.value;
+    this.searchShow(val);
+  }
+  // 搜索-显示
+  searchShow(val){
     // 发送请求 根据结果重置搜索结果
     const result = this.searchResult(val);
     console.log(result,'==============result')
     this.setState({
       searchList:result
     })
+    // clear清除按钮的显示
+    if(val.length>0){
+      this.setState({
+        showClear:true
+      })
+    }else{
+      this.setState({
+        showClear:false
+      })
+    }
+    this.setState({
+      searchKey:val
+    })
   }
   // 清除输入内容
   clearText(){
-    console.log('into clearTextclearTextclearTextclearText');
     this.setState({
-      searchKey:' '
+      showClear:false
+    })
+    this.setState({
+      searchList:[]
+    })
+    this.setState({
+      searchKey:''
     })
   }
-  // 搜索
+  // 搜索-算法
   searchResult(key){
+    console.log(key,'==================my--key');
     let matchR=[],
       newList = keyList;
     for(let i=0,len = newList.length; i < len; i++ ){
-      console.log(newList[i]);
-      if(newList[i].keyword.toString().indexOf(key)>-1){
-        console.log(key,'==============key');
+//      console.log(newList[i]);
+      const keyval = newList[i].keyword;
+      console.log(keyval.indexOf(key),'=========keyval.indexOf(key)',keyval);
+      if(keyval.indexOf(key)>-1){
         matchR.push(newList[i]);
       }
     }
+    console.log(matchR,'===============matchR');
     return matchR;
   }
   render(){
@@ -70,7 +97,12 @@ class Index extends Component{
         <View className="search-header">
           <View className="input-box">
             <Input type="text" value={this.state.searchKey} focus onInput={this.keyInput} onConfirm={this.keyInput} />
-            <View className="clear-box" onClick={this.clearText.bind(this)}><Icon size='20' type='clear' color='grey' /></View>
+            {
+              !!this.state.showClear
+                ?<View className="clear-box" onClick={this.clearText.bind(this)}><Icon size='20' type='clear' color='grey' /></View>
+                :""
+            }
+            
           </View>
           <Text onClick={this.searchCancel.bind(this)}>取消</Text>
         </View>
