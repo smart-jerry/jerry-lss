@@ -5,32 +5,13 @@
 import Taro, {Component} from '@tarojs/taro';
 import {View, Icon, Input, Text, ScrollView} from '@tarojs/components';
 import './index.less';
+import keyList from './data/keyList';
 
 class Index extends Component{
   constructor(props){
     super(props);
     this.state = {
-      searchList:[
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'},
-        {id:1,'keyword':'dddddd'}
-      ]
+      searchList:[]
     }
   }
   config = {
@@ -57,15 +38,31 @@ class Index extends Component{
     let input = e.detail;
     let val = input.value;
     // 发送请求 根据结果重置搜索结果
+    const result = this.searchResult(val);
+    console.log(result,'==============result')
     this.setState({
-      searchList:this.state.searchList.splice(0,this.state.searchList.length-3)
+      searchList:result
     })
   }
+  // 清除输入内容
   clearText(){
     console.log('into clearTextclearTextclearTextclearText');
     this.setState({
       searchKey:' '
     })
+  }
+  // 搜索
+  searchResult(key){
+    let matchR=[],
+      newList = keyList;
+    for(let i=0,len = newList.length; i < len; i++ ){
+      console.log(newList[i]);
+      if(newList[i].keyword.toString().indexOf(key)>-1){
+        console.log(key,'==============key');
+        matchR.push(newList[i]);
+      }
+    }
+    return matchR;
   }
   render(){
     return(
